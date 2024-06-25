@@ -1,0 +1,77 @@
+@import '../../../../styles/variables';
+
+.brands_section {
+  min-height: fit-content;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2rem;
+  background-color: $gray_bg;
+
+  h2 {
+    margin: 1rem auto;
+    font-weight: lighter;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  .brand-card {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 8rem;
+    max-height: 8rem;
+    width: 8rem;
+    min-width: 8rem;
+    max-width: 8rem;
+    aspect-ratio: 1;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: transform 200ms ease-out;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      scale: 1.01;
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .image_box {
+      height: 60%;
+      width: 95%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+
+      img {
+        height: 100%;
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+
+    .brand-info {
+      height: 20%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: rgb(24, 24, 24);
+
+      :nth-child(2) {
+        color: rgb(75, 75, 75);
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

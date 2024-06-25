@@ -1,0 +1,151 @@
+'use client'
+import { FC } from 'react'
+import {
+  getHoverData,
+  getSpecificationIcon,
+} from '@/helpers/VehicleDetailsHelper'
+import './Specification.scss'
+
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip'
+
+interface SpecificationData {
+  specificationKey: string
+  label: string
+  value: string | number
+}
+
+interface VehicleData {
+  id: number
+  name: string
+  specifications: SpecificationData[]
+}
+
+// Define the type for hover data
+interface HoverData {
+  [key: string]: {
+    hover: string
+  }
+}
+
+const sampleVehicleData: VehicleData = {
+  id: 1,
+  name: 'Tesla Model S',
+  specifications: [
+    { specificationKey: 'brand', label: 'Brand', value: 'Tesla' },
+    {
+      specificationKey: 'yearOfManufacture',
+      label: 'Year of Manufacture',
+      value: 2022,
+    },
+    { specificationKey: 'engineType', label: 'Engine Type', value: 'Electric' },
+    {
+      specificationKey: 'transmission',
+      label: 'Transmission',
+      value: 'Automatic',
+    },
+    {
+      specificationKey: 'seatingCapacity',
+      label: 'Seating Capacity',
+      value: '4',
+    },
+    { specificationKey: 'bodyType', label: 'Body Type', value: 'Sedan' },
+    {
+      specificationKey: 'fuelTankCapacity',
+      label: 'Fuel Tank Capacity',
+      value: '396 miles',
+    },
+    { specificationKey: 'color', label: 'Color', value: 'Unknown' },
+    {
+      specificationKey: 'infotainmentSystem',
+      label: 'Infotainment System',
+      value: 'Unknown',
+    },
+    {
+      specificationKey: 'climateControl',
+      label: 'Climate Control',
+      value: 'Unknown',
+    },
+    { specificationKey: 'abs', label: 'ABS', value: 'Yes' },
+    {
+      specificationKey: 'tractionControl',
+      label: 'Traction Control',
+      value: 'Unknown',
+    },
+    { specificationKey: 'wifi', label: 'WiFi', value: 'Unknown' },
+    {
+      specificationKey: 'luggageCapacity',
+      label: 'Luggage Capacity',
+      value: 'Unknown',
+    },
+    {
+      specificationKey: 'batteryCapacity',
+      label: 'Battery Capacity',
+      value: 'Unknown',
+    },
+    {
+      specificationKey: 'chargingTime',
+      label: 'Charging Time',
+      value: 'Unknown',
+    },
+    {
+      specificationKey: 'singleChargeRange',
+      label: 'Single Charge Range',
+      value: 'Unknown',
+    },
+  ],
+}
+
+interface SpecificationProps {
+  category?: string
+}
+
+const Specification: FC<SpecificationProps> = ({ category = 'car' }) => {
+  const hoverData: HoverData | null = getHoverData(category)
+  const specificationIcons = getSpecificationIcon(category)
+
+  return (
+    <div className="specification-container">
+      <h2 className="custom-heading">Specifications</h2>
+      <div className="specifications">
+        {sampleVehicleData.specifications.map((spec) => (
+          <div className="specification" key={spec.specificationKey}>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>
+                  <div className="spec-icon-box">
+                    <img
+                      src={
+                        specificationIcons[spec.specificationKey]?.icon || ''
+                      }
+                      alt={`${spec.label} icon`}
+                      className="spec-icon"
+                    />
+                  </div>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>
+                    {hoverData && hoverData[spec.specificationKey]
+                      ? hoverData[spec.specificationKey].hover
+                      : 'No data available'}
+                  </p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+
+            <div className="spec-details">
+              <span className="spec-label">{spec.label}</span>
+              <span className="spec-value">{spec.value}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+export default Specification

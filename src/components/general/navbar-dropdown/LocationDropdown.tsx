@@ -1,0 +1,53 @@
+import styles from '../navbar/Navbar.module.scss'
+
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from '@/components/ui/navigation-menu'
+import { useAppContext } from '@/context/AppContext'
+import { FaLocationDot } from 'react-icons/fa6'
+import { locations } from '../footer/footer-grid'
+
+export default function LocationDropdown() {
+  const { selectedLocation, setSelectedLocation } = useAppContext()
+
+  const onLocationChange = (loc: {
+    id: number
+    location: string
+    value: string
+  }) => {
+    setSelectedLocation({ name: loc.location, value: loc.value })
+  }
+
+  return (
+    <NavigationMenu>
+      <NavigationMenuList>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger
+            className={`${styles['nav-item']} ${styles['nav-items-icon']} border-none outline-none`}
+          >
+            <FaLocationDot className={`${styles['nav-items-icon']} `} />
+            <span>{selectedLocation.name}</span>
+          </NavigationMenuTrigger>
+          <NavigationMenuContent className="!w-40 flex flex-col p-1 bg-white shadow-md  gap-1">
+            {locations.map((loc) => (
+              <NavigationMenuLink
+                key={loc.id}
+                className={`${
+                  selectedLocation.value === loc.value && 'text-orange'
+                } cursor-pointer px-1 rounded-lg hover:bg-gray-200`}
+                onClick={() => onLocationChange(loc)}
+              >
+                <span>{loc.location}</span>
+              </NavigationMenuLink>
+            ))}
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+    </NavigationMenu>
+  )
+}

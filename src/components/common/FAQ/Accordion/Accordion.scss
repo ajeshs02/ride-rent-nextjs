@@ -1,0 +1,60 @@
+@import '../../../../styles/variables';
+
+.accordion_wrapper {
+  border: 1px solid rgba(190, 190, 190, 0.7);
+  border-radius: 0.3rem;
+  background: white;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+
+  .question-container {
+    width: 100%;
+    text-align: left;
+    padding: 10px 10px 3px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 550;
+    font-style: normal;
+    font-size: 0.9rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    &.active {
+      color: $yellow;
+      background-image: linear-gradient(90deg,
+          transparent,
+          rgba(0, 0, 0, 0.04),
+          transparent);
+    }
+
+    &:hover {
+      background-image: linear-gradient(90deg,
+          transparent,
+          rgba(0, 0, 0, 0.04),
+          transparent);
+    }
+  }
+
+  .arrow {
+    font-size: 2rem;
+    transition: 0.3s ease-out;
+
+    &.active {
+      rotate: 180deg;
+      color: $yellow;
+    }
+  }
+
+  .answer-container {
+    padding: 0 1rem;
+    transition: height 0.3s ease-out;
+
+    .answer-content {
+      padding: 0.5rem 0;
+      font-size: 1rem;
+      color: rgb(78, 78, 78);
+    }
+  }
+}

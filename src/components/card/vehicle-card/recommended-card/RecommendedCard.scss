@@ -1,0 +1,129 @@
+.recommended_card_container {
+  height: fit-content;
+  max-height: fit-content;
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+  background-color: white;
+
+  min-width: 17rem;
+  width: 100%;
+  max-width: 17rem;
+
+  box-shadow: 2px 4px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+
+  // card top
+  .card_top {
+    width: 100%;
+    height: 12rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    // background: #000;
+
+    .image_box {
+      width: 100%;
+      min-width: 100%;
+      height: 100%;
+      min-height: 100%;
+      border: solid 1px rgba(0, 0, 0, 0.1);
+      border-radius: 0.7rem;
+      overflow: hidden;
+
+      .car_image {
+        width: 100%;
+        height: 100%;
+        object-position: center;
+        object-fit: cover;
+      }
+
+      .price_tag {
+        position: absolute;
+        right: 0.7rem;
+        bottom: -0.7rem;
+        background: #ffbf01;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 0.4rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        color: white;
+        border-radius: 0.3rem;
+      }
+    }
+  }
+
+  // card bottom
+  .card_bottom {
+    margin-top: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+
+    .title_box {
+      display: flex;
+      flex-direction: column;
+      row-gap: 0.3rem;
+      margin-bottom: 1rem;
+      h3 {
+        font-size: medium;
+        margin: 0;
+      }
+
+      .rating_box {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        column-gap: 0.2rem;
+        // background-color: red;
+        padding: 0;
+        font-size: 0.8rem;
+        font-weight: lighter;
+        line-height: 0;
+        .rating {
+          padding: 0;
+          margin: 0;
+          // background: #000;
+        }
+      }
+    }
+
+    // features grid
+    .features_grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      row-gap: 0.6rem;
+      margin-bottom: 1rem;
+
+      div {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        column-gap: 0.3rem;
+        font-size: 0.8rem;
+        line-height: 0;
+        color: gray;
+      }
+    }
+
+    .rent_now {
+      width: 100%;
+      height: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 600;
+      color: white;
+      column-gap: 0.3rem;
+      background-color: #201f1d;
+      border-radius: 0.5rem;
+      cursor: pointer;
+
+      :first-child {
+        margin-bottom: 2px;
+      }
+    }
+  }
+}

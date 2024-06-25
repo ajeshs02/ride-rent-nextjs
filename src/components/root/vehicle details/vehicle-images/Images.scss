@@ -1,0 +1,96 @@
+/* Default styles for mobile devices and above */
+.images-container {
+  margin-right: 2rem;
+  background-color: white;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  min-width: auto;
+  max-width: 100% !important;
+
+  .carousel-container {
+    max-width: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+
+    .slider-container {
+      width: 100%;
+
+
+      div {
+        width: 100%;
+        min-width: 100%;
+        border-radius: 1rem;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+
+  // mini gallery
+
+  #mini-card {
+    width: 100%;
+  }
+
+  .mini-card-grid {
+    display: none;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+
+    ul {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      width: 85%;
+      max-width: 85%;
+      margin-left: auto;
+      margin-right: auto;
+      overflow: hidden;
+
+      li {
+        border-radius: 1rem;
+        overflow: hidden;
+        width: 6rem;
+        min-width: 6rem;
+        height: 6rem;
+        cursor: pointer;
+        transition: all 0.1s ease-out;
+
+        &:hover {
+          scale: 1.05;
+          box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+/*  (min-width: 768px) and above */
+@media (min-width: 768px) {}
+
+/* (min-width: 1200px) and above */
+@media (min-width: 1200px) {
+  .images-container {
+
+    // mini gallery
+    .mini-card-grid {
+      display: block;
+    }
+  }
+}

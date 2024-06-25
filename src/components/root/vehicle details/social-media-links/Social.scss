@@ -1,0 +1,105 @@
+@import '../../../../styles/variables';
+
+/* Default styles for mobile devices and above */
+.profile-social {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
+  margin-top: 1rem;
+  display: none;
+
+  .custom-heading {
+    margin-bottom: 2rem;
+
+    h3 {
+      font-weight: 500;
+      font-size: 1.3rem;
+      color: black;
+    }
+  }
+
+  .social {
+    display: flex;
+    column-gap: 0.6rem;
+
+    .icon-box {
+      .icon {
+        background-color: black;
+        color: white;
+        width: 2rem;
+        height: 2rem;
+        padding: 0.4rem;
+        border-radius: 100%;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          color: white;
+          background-color: $yellow;
+          scale: 1.1;
+        }
+      }
+
+
+      // facebook
+      .facebook {
+
+
+        &:hover {
+          background-color: #1877F2;
+        }
+      }
+
+      // instagram
+      .instagram {
+        &:hover {
+          background-color: #E4405F;
+          /* Instagram iconic color on hover */
+        }
+      }
+
+      // pinterest
+      .pinterest {
+        &:hover {
+          background-color: #BD081C;
+          /* Pinterest iconic color on hover */
+        }
+      }
+
+      // linkedin
+      .linkedin {
+        &:hover {
+          background-color: #0077B5;
+          /* LinkedIn iconic color on hover */
+        }
+      }
+
+      // twitter
+      .twitter {
+        &:hover {
+          background-color: #1DA1F2;
+          /* Twitter iconic color on hover */
+        }
+      }
+
+      //behance
+      .behance {
+        &:hover {
+          background-color: #1769FF;
+          /* Behance iconic color on hover */
+        }
+      }
+    }
+  }
+
+}
+
+/*  (min-width: 768px) and above */
+@media (min-width: 768px) {}
+
+/* (min-width: 1200px) and above */
+@media (min-width: 1200px) {
+  .profile-social {
+    display: block;
+  }
+}
