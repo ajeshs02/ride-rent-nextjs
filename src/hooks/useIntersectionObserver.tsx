@@ -1,26 +1,36 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, MutableRefObject } from 'react'
 
-const useIntersectionObserver = (ref) => {
+interface UseIntersectionObserverOptions {
+  threshold?: number | number[]
+  root?: Element | null
+  rootMargin?: string
+}
+
+const useIntersectionObserver = (
+  ref: MutableRefObject<Element | null>,
+  options: UseIntersectionObserverOptions = { threshold: 0.1 }
+): boolean => {
   const [isIntersecting, setIntersecting] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => setIntersecting(entry.isIntersecting),
-      { threshold: 0.1 }
+      options
     )
 
-    if (ref.current) {
-      observer.observe(ref.current)
+    const current = ref.current
+    if (current) {
+      observer.observe(current)
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current)
+      if (current) {
+        observer.unobserve(current)
       }
     }
-  }, [ref])
+  }, [ref, options])
 
   return isIntersecting
 }

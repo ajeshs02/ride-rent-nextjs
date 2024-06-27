@@ -26,23 +26,23 @@ export default function LocationDropdown() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        <NavigationMenuItem>
+        <NavigationMenuItem className="!rounded-xl">
           <NavigationMenuTrigger
             className={`${styles['nav-item']} ${styles['nav-items-icon']} border-none outline-none`}
           >
             <FaLocationDot className={`${styles['nav-items-icon']} `} />
             <span>{selectedLocation.name}</span>
           </NavigationMenuTrigger>
-          <NavigationMenuContent className="!w-40 flex flex-col p-1 bg-white shadow-md  gap-1">
+          <NavigationMenuContent className="!w-40 flex flex-col p-1 bg-white shadow-md !rounded-xl gap-1">
             {locations.map((loc) => (
               <NavigationMenuLink
                 key={loc.id}
                 className={`${
                   selectedLocation.value === loc.value && 'text-orange'
-                } cursor-pointer px-1 rounded-lg hover:bg-gray-200`}
+                } cursor-pointer p-1 px-2 !rounded-xl hover:bg-gray-200`}
                 onClick={() => onLocationChange(loc)}
               >
-                <span>{loc.location}</span>
+                <span className="text-base">{loc.location}</span>
               </NavigationMenuLink>
             ))}
           </NavigationMenuContent>

@@ -1,166 +1,87 @@
+'use client'
 import './Images.scss'
 
-import imageOne from '../../../assets/img/bg/car.webp'
-import imageTwo from '../../../assets/img/bg/charter.webp'
+import Autoplay from 'embla-carousel-autoplay'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from '@/components/ui/carousel'
+import { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 
-import { swiffyslider } from 'swiffy-slider'
-import 'swiffy-slider/css'
-import { useEffect } from 'react'
-import useIsSmallScreen from '../../../hooks/useIsSmallScreen'
+type CarouselWrapperProps = {
+  children: React.ReactNode
+  isButtonVisible?: boolean
+  customClass?: string
+}
+
+const imagedata = [
+  { id: 1, alt: 'car image', src: '/assets/img/bg/car.webp' },
+  { id: 2, alt: 'charter image', src: '/assets/img/bg/charter.webp' },
+]
 
 const Images = () => {
-  window.swiffyslider = swiffyslider
-
-  const isSmallScreen = useIsSmallScreen(1200)
+  const [api, setApi] = useState<CarouselApi>()
+  const [current, setCurrent] = useState(0)
+  const [count, setCount] = useState(0)
+  const plugin = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }))
+  const subPlugin = useRef(Autoplay({ delay: 1000, stopOnInteraction: false }))
 
   useEffect(() => {
-    if (window.swiffyslider) {
-      window.swiffyslider.init()
+    if (!api) {
+      return
     }
-  }, [])
 
-  const thumbHover = (imageNumber) => {
-    const sliderElement = document.getElementById('image-gallery')
-    swiffyslider.slideTo(sliderElement, imageNumber)
-  }
+    setCount(api.scrollSnapList().length)
+    setCurrent(api.selectedScrollSnap() + 1)
+
+    api.on('select', () => {
+      setCurrent(api.selectedScrollSnap() + 1)
+    })
+  }, [api])
 
   return (
-    <div className="images-container">
-      <div
-        className={`carousel-container swiffy-slider slider-nav-round slider-nav-autoplay slider-nav-autopause ${
-          isSmallScreen &&
-          'slider-indicators-dark slider-indicators-outside slider-indicators-sm'
-        } `}
-        id="image-gallery"
-        data-slider-nav-autoplay-interval="2500"
+    <div className="images-container ">
+      <Carousel
+        setApi={setApi}
+        plugins={[plugin.current]}
+        className={`w-full
+      mx-auto md:px-9  main-container `}
+        onMouseEnter={plugin.current.stop}
+        onMouseLeave={() => plugin.current.play()}
+        opts={{
+          align: 'start',
+        }}
       >
-        <div className="slider-container ">
-          <div className="slide-visible">
-            <img id="slide1" src={imageOne} loading="lazy" alt="..." />
-          </div>
-          <div className="">
-            <img id="slide2" src={imageTwo} loading="lazy" alt="..." />
-          </div>
-        </div>
+        <CarouselContent className="gap-2 ">
+          {imagedata.map((data) => (
+            <CarouselItem key={data.id} className=" img-container">
+              <Image
+                src={data.src}
+                alt={data.alt}
+                className="main-img"
+                width={800}
+                height={780}
+                objectFit="cover"
+              />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className="max-md:hidden ml-[2.8rem] " />
+        <CarouselNext className="max-md:hidden mr-[2.8rem]" />
+      </Carousel>
 
-        <button
-          type="button"
-          aria-label="carousel navigation button"
-          className="slider-nav"
-        ></button>
-        <button
-          type="button"
-          aria-label="carousel navigation button"
-          className="slider-nav slider-nav-next"
-        ></button>
-
-        {isSmallScreen && (
-          <ul className="slider-indicators">
-            <li className="active"></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        )}
-      </div>
-
-      <div
-        className="mini-card-grid swiffy-slider slider-nav-outside slider-nav-dark  slider-nav-sm slider-nav-chevron slider-item-show4 slider-item-snapstart slider-item-ratio slider-item-ratio-1x1 slider-nav-visible slider-nav-page slider-nav-outside"
-        id="mini-card"
-      >
-        <ul className="slider-container">
-          <li>
-            <img
-              src={imageOne}
-              loading="lazy"
-              alt="..."
-              onClick={() => thumbHover(0)}
-            />
-          </li>
-          <li>
-            <img
-              src={imageTwo}
-              loading="lazy"
-              alt="..."
-              onClick={() => thumbHover(1)}
-            />
-          </li>
-          <li>
-            <img
-              src={imageOne}
-              loading="lazy"
-              alt="..."
-              onClick={() => thumbHover(0)}
-            />
-          </li>
-          <li>
-            <img
-              src={imageTwo}
-              loading="lazy"
-              alt="..."
-              onClick={() => thumbHover(1)}
-            />
-          </li>
-          <li>
-            <img
-              src={imageOne}
-              loading="lazy"
-              alt="..."
-              onClick={() => thumbHover(0)}
-            />
-          </li>
-          <li>
-            <img
-              src={imageTwo}
-              loading="lazy"
-              alt="..."
-              onClick={() => thumbHover(1)}
-            />
-          </li>
-          <li>
-            <img
-              src={imageOne}
-              loading="lazy"
-              alt="..."
-              onClick={() => thumbHover(0)}
-            />
-          </li>
-          <li>
-            <img
-              src={imageTwo}
-              loading="lazy"
-              alt="..."
-              onClick={() => thumbHover(1)}
-            />
-          </li>
-          <li>
-            <img
-              src={imageOne}
-              loading="lazy"
-              alt="..."
-              onClick={() => thumbHover(0)}
-            />
-          </li>
-          <li>
-            <img
-              src={imageTwo}
-              loading="lazy"
-              alt="..."
-              onClick={() => thumbHover(1)}
-            />
-          </li>
-        </ul>
-
-        <button
-          type="button"
-          className="slider-nav"
-          aria-label="Go previous"
-        ></button>
-        <button
-          type="button"
-          className="slider-nav slider-nav-next"
-          aria-label="Go next"
-        ></button>
+      <div className="dots-container">
+        {Array.from({ length: count }).map((_, index) => (
+          <div
+            key={index}
+            className={`dot ${current - 1 === index ? 'active' : ''}`}
+          ></div>
+        ))}
       </div>
     </div>
   )

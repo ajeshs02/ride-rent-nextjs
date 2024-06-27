@@ -1,5 +1,5 @@
 /* Default styles for mobile devices and above */
-.landing-container {
+.category-container {
   width: fit-content !important;
   max-width: 90%;
   height: fit-content;
@@ -72,7 +72,8 @@
 
 /*  (min-width: 768px) and above */
 @media (min-width: 768px) {
-  .landing-container {
+  .category-container {
+    bottom: 0;
 
     .slider-container {
       padding: 0.3rem 0.4rem 0.2rem;
@@ -105,7 +106,7 @@
 
 /* (min-width: 1024px) and above */
 @media (min-width: 1024px) {
-  .landing-container {
+  .category-container {
     max-width: fit-content;
 
     .vehicle_category_card {

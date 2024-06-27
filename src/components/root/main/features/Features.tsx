@@ -11,10 +11,10 @@ const Features = () => {
         <p>
           Discover the best of Dubai with our affordable and reliable car rental
           service.
-          <br /> Whether you're visiting the main locations or exploring hidden
-          gems, our diverse fleet offers the perfect match for your travel
-          needs. <br /> Experience hassle-free car rental with transparent
-          pricing and no hidden fees.
+          <br /> Whether you&apos;re visiting the main locations or exploring
+          hidden gems, our diverse fleet offers the perfect match for your
+          travel needs. <br /> Experience hassle-free car rental with
+          transparent pricing and no hidden fees.
         </p>
         <br />
         <p className="second-paragraph">

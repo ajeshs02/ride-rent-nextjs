@@ -8,7 +8,10 @@ const Landing = () => {
     <section className="landing-section  ">
       <div className="landing-top">
         {/* mobile visible button */}
-        <button className="yellow-gradient default-btn list-btn">
+        <button
+          id="mobile-list-btn"
+          className="yellow-gradient default-btn mobile-list-btn"
+        >
           List your vehicle for FREE
         </button>
         {/* landing top */}

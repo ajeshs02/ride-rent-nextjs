@@ -22,8 +22,8 @@ const WhyOpt = () => {
           standby.
           <br />
           <br />
-          Don't hesitate—secure your ideal car for rent in Dubai with RIDE.RENT
-          today!
+          Don&apos;t hesitate—secure your ideal car for rent in Dubai with
+          RIDE.RENT today!
         </p>
       </div>
 

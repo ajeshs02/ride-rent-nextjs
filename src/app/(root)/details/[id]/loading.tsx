@@ -1,7 +1,5 @@
+import Loading from '@/components/general/loading/Loader'
+
 export default function VehicleDetailsLoading() {
-  return (
-    <div className="h-32 flex justify-center items-center">
-      Vehicle Details Loading..
-    </div>
-  )
+  return <Loading />
 }

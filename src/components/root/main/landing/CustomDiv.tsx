@@ -8,14 +8,16 @@ export default function CustomDiv({ children }: { children: React.ReactNode }) {
 
   return (
     <div className={`landing-bg `}>
-      <Image
-        src={`/assets/img/bg/${selectedType.value}.webp`}
-        alt="background image"
-        quality={100}
-        priority
-        fill
-        style={{ objectFit: 'cover', objectPosition: 'center' }}
-      />
+      <div className="imageWrapper">
+        <Image
+          src={`/assets/img/bg/${selectedType.value}.webp`}
+          className="image"
+          alt="background image"
+          quality={100}
+          priority
+          fill
+        />
+      </div>
       {children}
     </div>
   )

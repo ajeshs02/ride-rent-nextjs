@@ -71,15 +71,15 @@ const DocumentsRequired = () => {
       <div className="bottom_description">
         <p>
           Travellers from the GCC, US, UK, Canada, Europe, and some other places
-          can use their home country driver's license to drive in UAE, without
-          needing an International Driving Permit (IDP) .
+          can use their home country driver&apos;s license to drive in UAE,
+          without needing an International Driving Permit (IDP) .
         </p>
         <br />
         <p>
           <a href="" className="text-blue-500">
             Click here{' '}
           </a>{' '}
-          to find out if your country's license is accepted in the UAE.
+          to find out if your country&apos;s license is accepted in the UAE.
         </p>
       </div>
     </div>

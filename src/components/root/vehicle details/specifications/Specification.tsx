@@ -1,5 +1,5 @@
 'use client'
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import {
   getHoverData,
   getSpecificationIcon,
@@ -108,6 +108,8 @@ const Specification: FC<SpecificationProps> = ({ category = 'car' }) => {
   const hoverData: HoverData | null = getHoverData(category)
   const specificationIcons = getSpecificationIcon(category)
 
+  useEffect(() => console.log(specificationIcons), [specificationIcons])
+
   return (
     <div className="specification-container">
       <h2 className="custom-heading">Specifications</h2>
@@ -116,31 +118,32 @@ const Specification: FC<SpecificationProps> = ({ category = 'car' }) => {
           <div className="specification" key={spec.specificationKey}>
             <TooltipProvider>
               <Tooltip>
-                <TooltipTrigger>
+                <TooltipTrigger className="flex gap-1">
                   <div className="spec-icon-box">
                     <img
-                      src={
-                        specificationIcons[spec.specificationKey]?.icon || ''
-                      }
+                      src={specificationIcons[spec.specificationKey]?.icon.src}
                       alt={`${spec.label} icon`}
-                      className="spec-icon"
+                      className="spec-icon "
+                      style={{
+                        fill: 'yellow',
+                      }}
                     />
                   </div>
+
+                  <div className="spec-details">
+                    <span className="spec-label">{spec.label}</span>
+                    <span className="spec-value">{spec.value}</span>
+                  </div>
                 </TooltipTrigger>
-                <TooltipContent>
+                <TooltipContent className="bg-slate-800 text-white !rounded-xl shadow-md">
                   <p>
-                    {hoverData && hoverData[spec.specificationKey]
-                      ? hoverData[spec.specificationKey].hover
+                    {hoverData
+                      ? hoverData[spec.specificationKey]?.hover
                       : 'No data available'}
                   </p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
-
-            <div className="spec-details">
-              <span className="spec-label">{spec.label}</span>
-              <span className="spec-value">{spec.value}</span>
-            </div>
           </div>
         ))}
       </div>

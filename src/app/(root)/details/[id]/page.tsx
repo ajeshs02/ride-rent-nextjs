@@ -3,12 +3,12 @@ import './VehicleDetailsPage.scss'
 import ProfileCard from '@/components/card/owner-profile-card/ProfileCard'
 import WhyOpt from '@/components/common/why-opt/WhyOpt'
 import Description from '@/components/root/vehicle details/description/Description'
-import Features from '@/components/root/main/features/Features'
+
 import Specification from '@/components/root/vehicle details/specifications/Specification'
-// import Images from '@/components/root/vehicle details/vehicle-images/Images'
-import Social from '@/components/general/footer/social/Social'
 import { IoLocationOutline } from 'react-icons/io5'
 import DetailsSectionClient from '@/components/root/vehicle details/DetailsSectionClient'
+import Images from '@/components/root/vehicle details/vehicle-images/Images'
+import VehicleFeatures from '@/components/root/vehicle details/features/Features'
 
 export default function page() {
   return (
@@ -36,20 +36,17 @@ export default function page() {
             {/* container left */}
             <div className="details">
               {/* Images */}
-              {/* <Images /> */}
-              {/* Specification */}k
+              <Images />
+              {/* Specification */}
               <Specification />
               {/* Features */}
-              <Features />
+              <VehicleFeatures />
             </div>
 
             {/* container right */}
             <div className="right">
               {/* Profile */}
               <ProfileCard />
-
-              {/* Social Media Links */}
-              <Social />
             </div>
           </div>
         </section>

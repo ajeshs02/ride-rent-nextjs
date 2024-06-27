@@ -16,7 +16,7 @@ const VehicleCategories = () => {
   const plugin = useRef(Autoplay({ delay: 1600, stopOnInteraction: false }))
 
   return (
-    <div className="landing-container">
+    <div className="category-container">
       <Carousel
         plugins={[plugin.current]}
         className="w-full "

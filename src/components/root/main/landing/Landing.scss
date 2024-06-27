@@ -1,7 +1,7 @@
 /* Default styles for mobile devices and above */
 .landing-section {
   height: auto;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   position: relative;
   width: 101%;
   overflow-x: hidden;
@@ -11,7 +11,7 @@
     position: relative;
 
     // mobile view button
-    .list-btn {
+    .mobile-list-btn {
       position: absolute;
       display: block;
       top: 1rem;
@@ -20,14 +20,25 @@
     }
 
     .landing-bg {
-      height: 92%;
+      height: 92% !important;
       min-height: 92%;
       max-height: 92%;
-      background-size: cover;
-      background-position: 40% 40%;
-      background-repeat: no-repeat;
       position: relative;
-      transition: background-image 0.5s ease-in-out;
+
+      .imageWrapper {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+
+        .image {
+          object-fit: cover;
+          transition: background-position 0.3s ease;
+        }
+      }
+
+
 
       .iphone-style {
         top: 67%;
@@ -114,17 +125,25 @@
 
 /*  (min-width: 768px) and above */
 @media (min-width: 768px) {
-  .lading-section {
+  .landing-section {
     .landing-top {
-      height: 60vh;
-      position: relative;
+      height: 70vh;
 
       .landing-bg {
         height: 100%;
         min-height: 100%;
-        background-position: 0% 40% !important;
+        max-height: 100%;
+
+        .imageWrapper {
+
+          .image {
+            object-position: 10% 50%;
+          }
+        }
+
 
         .landing-text-container {
+          // background: #000;
           top: 30%;
           margin-left: 2rem;
           width: fit-content;
@@ -148,19 +167,24 @@
 
 /* (min-width: 1024px) and above */
 @media (min-width: 1024px) {
-  .lading-section {
+  .landing-section {
     .landing-top {
-      .list-btn {
-        display: none;
-      }
-
-      height: 70vh;
+      height: 80vh;
       position: relative;
 
+
+      .mobile-list-btn {
+        display: none;
+        border: solid 1rem red;
+      }
+
       .landing-bg {
-        height: 100%;
-        min-height: 100%;
-        background-position: 50% 50%;
+        .imageWrapper {
+
+          .image {
+            object-position: 5% 50%;
+          }
+        }
 
         .landing-text-container {
           top: 30%;
@@ -178,7 +202,7 @@
     // landing bottom
 
     .landing-bottom {
-      margin-top: 4.5rem;
+      margin-top: 3rem;
       width: 80%;
     }
   }

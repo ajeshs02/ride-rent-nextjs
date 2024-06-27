@@ -2,7 +2,7 @@ import './Features.scss'
 import { sampleVehicleFeatures } from '.'
 import { FaCheckDouble, FaFire } from 'react-icons/fa'
 
-const Features = () => {
+const VehicleFeatures = () => {
   return (
     <div className="features-section">
       <h2 className="custom-heading">Features</h2>
@@ -21,4 +21,4 @@ const Features = () => {
     </div>
   )
 }
-export default Features
+export default VehicleFeatures
