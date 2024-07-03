@@ -1,11 +1,17 @@
 'use client'
-import { FAQ_Data } from '.'
 import Accordion from './Accordion/Accordion'
 import './FAQ.scss'
 import { useState } from 'react'
 import Image from 'next/image'
 
-const FAQ: React.FC = () => {
+type FAQProps = {
+  data: {
+    question: string
+    answer: string
+  }[]
+}
+
+export default function FAQ({ data }: FAQProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(0)
 
   const handleItemClick = (index: number) => {
@@ -26,7 +32,7 @@ const FAQ: React.FC = () => {
       </div>
 
       <div className="faq">
-        {FAQ_Data.map((item, index) => (
+        {data.map((item, index) => (
           <Accordion
             key={index}
             question={item.question}
@@ -39,5 +45,3 @@ const FAQ: React.FC = () => {
     </section>
   )
 }
-
-export default FAQ

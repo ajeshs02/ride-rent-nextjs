@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={firaSans.className}>
-        <main className="mt-[4.85rem]">{children}</main>
+        <main>{children}</main>
       </body>
     </html>
   )

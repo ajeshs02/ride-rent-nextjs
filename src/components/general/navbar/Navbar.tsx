@@ -2,7 +2,6 @@
 
 import styles from './Navbar.module.scss'
 import { IoLanguage } from 'react-icons/io5'
-import { FaLink } from 'react-icons/fa6'
 import { MdManageSearch } from 'react-icons/md'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import React, { useState } from 'react'
@@ -10,8 +9,9 @@ import Sidebar from '../sidebar/Sidebar'
 import Link from 'next/link'
 import Image from 'next/image'
 
-import { useAppContext } from '@/context/AppContext'
 import LocationDropdown from '../navbar-dropdown/LocationDropdown'
+import QuickLinksDropdown from '../navbar-dropdown/QuickLinksDropdown'
+import CategoryDropdown from '../navbar-dropdown/CategoryDropdown'
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
@@ -66,20 +66,10 @@ const Navbar = () => {
             </li>
 
             <li>
-              <div
-                className={`${styles['nav-item']} ${styles['nav-items-icon']}`}
-              >
-                <FaLink className={`${styles['nav-items-icon']} `} />
-                <span>Quick Links</span>
-              </div>
+              <QuickLinksDropdown />
             </li>
-            <li className={styles.links}>
-              <div className={`${styles['nav-item']} `}>
-                <MdManageSearch
-                  className={`${styles['nav-items-icon']} ${styles.custom}`}
-                />
-                <span>Cars</span>
-              </div>
+            <li>
+              <CategoryDropdown />
             </li>
             <li className={styles['list-btn']}>
               <button className={`yellow-gradient default-btn`}>

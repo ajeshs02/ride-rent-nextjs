@@ -10,7 +10,7 @@ export default function MainLayout({
   return (
     <AppProvider>
       <Navbar />
-      <main>{children}</main>
+      <main className="mt-[4.85rem]">{children}</main>
       <Footer />
     </AppProvider>
   )

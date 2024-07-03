@@ -28,7 +28,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "**/*.d.ts",
-    "src/helpers/VehicleDetailsHelper.js"
+    "src/helpers/VehicleDetailsHelper.ts"
   ],
   "exclude": ["node_modules"]
 }

@@ -1,3 +1,4 @@
+import { Category } from '@/helpers/VehicleDetailsHelper'
 import { carIcons } from './Icons'
 
 // hover data for specifications
@@ -423,10 +424,21 @@ export const specificationsHoverData = {
   // buses end
 }
 
+type IconType = {
+  icon: string
+}
+
+// Define a type for specifications icon data
+export type SpecificationsIconData = {
+  [category in Category]: {
+    [key: string]: IconType
+  }
+}
+
 // icon for specifications
-export const specificationsIconData = {
+export const specificationsIconData: SpecificationsIconData = {
   // cars icons
-  cars: {
+  car: {
     brand: {
       icon: carIcons.brandIcon,
     },
@@ -482,12 +494,118 @@ export const specificationsIconData = {
       icon: carIcons.tractionControlIcon,
     },
   },
+  sports_car: {
+    brand: {
+      icon: carIcons.brandIcon,
+    },
+    yearOfManufacture: {
+      icon: carIcons.yearOfManufactureIcon,
+    },
+    engineType: {
+      icon: carIcons.engineTypeIcon,
+    },
+  },
+  bicycle: {
+    brand: {
+      icon: carIcons.brandIcon,
+    },
+    yearOfManufacture: {
+      icon: carIcons.yearOfManufactureIcon,
+    },
+  },
+  electric_cycle: {
+    brand: {
+      icon: carIcons.brandIcon,
+    },
+    yearOfManufacture: {
+      icon: carIcons.yearOfManufactureIcon,
+    },
+  },
+  motorcycle: {
+    brand: {
+      icon: carIcons.brandIcon,
+    },
+    yearOfManufacture: {
+      icon: carIcons.yearOfManufactureIcon,
+    },
+  },
+  sports_bike: {
+    brand: {
+      icon: carIcons.brandIcon,
+    },
+  },
+  leisure_boat: {
+    brand: {
+      icon: carIcons.brandIcon,
+    },
+    yearOfManufacture: {
+      icon: carIcons.yearOfManufactureIcon,
+    },
+    engineType: {
+      icon: carIcons.engineTypeIcon,
+    },
+  },
+  yacht: {
+    brand: {
+      icon: carIcons.brandIcon,
+    },
+    yearOfManufacture: {
+      icon: carIcons.yearOfManufactureIcon,
+    },
+  },
+  charter: {
+    brand: {
+      icon: carIcons.brandIcon,
+    },
+    yearOfManufacture: {
+      icon: carIcons.yearOfManufactureIcon,
+    },
+    engineType: {
+      icon: carIcons.engineTypeIcon,
+    },
+  },
+  van: {
+    brand: {
+      icon: carIcons.brandIcon,
+    },
+    yearOfManufacture: {
+      icon: carIcons.yearOfManufactureIcon,
+    },
+    engineType: {
+      icon: carIcons.engineTypeIcon,
+    },
+  },
+  buggy: {
+    brand: {
+      icon: carIcons.brandIcon,
+    },
+    cruiseControl: {
+      icon: carIcons.cruiseControlIcon,
+    },
+    transmission: {
+      icon: carIcons.transmissionIcon,
+    },
+    wifi: {
+      icon: carIcons.wifiIcon,
+    },
+  },
+  bus: {
+    brand: {
+      icon: carIcons.brandIcon,
+    },
+    yearOfManufacture: {
+      icon: carIcons.yearOfManufactureIcon,
+    },
+    engineType: {
+      icon: carIcons.engineTypeIcon,
+    },
+  },
 }
 
 // specification data
 export const specificationsData = {
   // cycles and electric cycles
-  cycles: [
+  cycle: [
     {
       label: 'Brand',
       value: 'brand',
@@ -540,7 +658,7 @@ export const specificationsData = {
   // cycles end
 
   // motorcycles and sports bikes
-  bikes: [
+  bike: [
     { label: 'Brand', value: 'brand', hover: 'Manufacturer of the bike.' },
     {
       label: 'Helmet',
@@ -586,7 +704,7 @@ export const specificationsData = {
   // bikes end
 
   // boats start
-  boats: [
+  boat: [
     {
       label: 'Brand',
       value: 'brand',
@@ -707,7 +825,7 @@ export const specificationsData = {
   // boats end
 
   // cars start
-  cars: [
+  car: [
     { label: 'Brand', value: 'brand', hover: 'Manufacturer of the car.' },
     {
       label: 'Year of Manufacture',
@@ -798,7 +916,7 @@ export const specificationsData = {
   // cars end
 
   // charters start
-  charters: [
+  charter: [
     { label: 'Brand', value: 'brand', hover: 'Manufacturer of the aircraft.' },
     {
       label: 'Year of Manufacture',
@@ -879,7 +997,7 @@ export const specificationsData = {
   // charters end
 
   // vans start
-  vans: [
+  van: [
     {
       label: 'Brand',
       value: 'brand',
@@ -1032,7 +1150,7 @@ export const specificationsData = {
   // buggy end
 
   // buses start
-  buses: [
+  bus: [
     { label: 'Brand', value: 'brand', hover: 'Manufacturer of the bus.' },
     {
       label: 'Year of Manufacture',

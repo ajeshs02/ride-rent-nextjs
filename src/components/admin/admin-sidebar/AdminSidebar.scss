@@ -1,0 +1,116 @@
+@import '../../../styles/variables';
+
+.admin-sidebar {
+  position: fixed;
+  top: 4.84rem;
+  width: 16rem;
+  height: 100%;
+  background-color: #ffffff;
+  transition: all 0.3s ease-in-out;
+  z-index: 101;
+  padding: 1.3rem 0.6rem;
+
+  &.open {
+    left: 0;
+  }
+
+  &.closed {
+    left: -16rem;
+  }
+
+  &.default {
+    left: 0;
+  }
+
+
+
+  // close button
+  .hamburger-close-btn {
+    position: absolute;
+    right: 1rem;
+    top: 2rem;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    margin-top: -2rem;
+    outline: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    .hamburger-icon {
+      width: 2rem;
+      height: 2rem;
+      transition: color 100ms ease-in;
+
+      &:hover {
+        color: $yellow;
+      }
+    }
+
+    &:hover .hamburger-icon {
+      color: $yellow;
+    }
+  }
+
+  // sidebar content
+  .sidebar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+
+    .sidebar-link {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      height: 3rem;
+      padding: 0.4rem 1rem;
+      border-radius: 0.5rem;
+      transition: all 0.1s ease-out;
+
+      &:hover {
+        color: $yellow;
+      }
+
+      // icon
+      .icon {
+        font-size: 1.2rem;
+      }
+
+      // label
+      .label {
+        font-weight: 500;
+      }
+    }
+
+    .active {
+      background-color: $yellow;
+      color: white;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
+
+/*  (min-width: 768px) and above */
+@media (min-width: 768px) {}
+
+@media (min-width: 1024px) {}
+
+/*  (min-width: 1100px) and above */
+@media (min-width: 1100px) {
+
+  .admin-sidebar {
+
+    &.default {
+      left: 0;
+    }
+
+  }
+}

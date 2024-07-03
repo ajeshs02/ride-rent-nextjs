@@ -1,0 +1,149 @@
+@import '../../../../styles/variables';
+
+/* Default styles for mobile devices and above */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  transition: all 0.2s ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.719);
+    z-index: 100;
+    transition: all 0.2s ease-out;
+  }
+
+  // modal close button
+  .close-modal-btn {
+    position: fixed;
+    top: 3rem;
+    right: 3rem;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $yellow;
+    color: white;
+    z-index: 101;
+    border-radius: 100%;
+
+    .icon {
+      font-size: 2rem;
+    }
+  }
+
+  // modal styling
+  .filter-modal {
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 24rem;
+    height: fit-content;
+    padding: 1rem 0.1rem 1rem;
+    border-radius: 1rem;
+    overflow-y: auto;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 101;
+
+
+    .accordion-wrapper {
+      width: 95%;
+      height: 26rem;
+      max-height: 26rem;
+      overflow-y: scroll;
+      border-bottom: 1px solid rgba(228, 228, 228, 0.338);
+      border-radius: 1rem;
+      box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    // button styling
+    // button styling
+    .filter-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 90%;
+
+      // apply button
+      .apply {
+        width: 100%;
+        height: 2.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 0.4rem;
+        border: none;
+        background-color: $yellow;
+        font-weight: bold;
+        font-size: 1rem;
+        color: white;
+        border-radius: 1rem;
+        transition: opacity 0.5s ease, transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+        cursor: pointer;
+        margin: 1rem auto 0.5rem;
+
+        &:hover {
+          transform: scale(1.005);
+          box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        &:active {
+          transform: scale(0.99);
+          box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+      }
+
+      // reset button
+      .reset {
+        width: 100%;
+        height: 2.5rem;
+        border: 1px solid #dc3546a4;
+        background-color: white;
+        font-weight: bold;
+        font-size: 1rem;
+        color: #dc3545;
+        border-radius: 1rem;
+        transition: opacity 0.5s ease, transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.01);
+          box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        &:active {
+          transform: scale(0.99);
+          box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+
+  }
+}
+
+/* Small screens and above (sm) */
+@media (min-width: 576px) {
+  .background {
+    .filter-modal {
+      max-width: 22rem;
+    }
+  }
+}
+
+/*  (min-width: 768px) and above */
+@media (min-width: 768px) {}
+
+/* (min-width: 1024px) and above */
+@media (min-width: 1024px) {}

@@ -1,6 +1,8 @@
 'use client'
+
 import { FC, useEffect } from 'react'
 import {
+  Category,
   getHoverData,
   getSpecificationIcon,
 } from '@/helpers/VehicleDetailsHelper'
@@ -13,12 +15,14 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip'
 
+// Define the type for specification data
 interface SpecificationData {
   specificationKey: string
   label: string
   value: string | number
 }
 
+// Define the type for vehicle data
 interface VehicleData {
   id: number
   name: string
@@ -30,6 +34,19 @@ interface HoverData {
   [key: string]: {
     hover: string
   }
+}
+
+// Define the type for icon data
+type IconData = {
+  [key: string]: {
+    [prop: string]: { icon: { src: string } }
+  }
+}
+
+// Define the possible categories for vehicles
+
+interface SpecificationProps {
+  category?: Category
 }
 
 const sampleVehicleData: VehicleData = {
@@ -100,12 +117,8 @@ const sampleVehicleData: VehicleData = {
   ],
 }
 
-interface SpecificationProps {
-  category?: string
-}
-
 const Specification: FC<SpecificationProps> = ({ category = 'car' }) => {
-  const hoverData: HoverData | null = getHoverData(category)
+  const hoverData: HoverData | null = getHoverData(category) // Ensure category is of type Category
   const specificationIcons = getSpecificationIcon(category)
 
   useEffect(() => console.log(specificationIcons), [specificationIcons])
@@ -114,38 +127,40 @@ const Specification: FC<SpecificationProps> = ({ category = 'car' }) => {
     <div className="specification-container">
       <h2 className="custom-heading">Specifications</h2>
       <div className="specifications">
-        {sampleVehicleData.specifications.map((spec) => (
-          <div className="specification" key={spec.specificationKey}>
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger className="flex gap-1">
-                  <div className="spec-icon-box">
-                    <img
-                      src={specificationIcons[spec.specificationKey]?.icon.src}
-                      alt={`${spec.label} icon`}
-                      className="spec-icon "
-                      style={{
-                        fill: 'yellow',
-                      }}
-                    />
-                  </div>
+        {sampleVehicleData.specifications.map((spec) => {
+          return (
+            <div className="specification" key={spec.specificationKey}>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger className="flex gap-1">
+                    <div className="spec-icon-box">
+                      {specificationIcons &&
+                        specificationIcons[spec.specificationKey] && (
+                          <img
+                            src={specificationIcons[spec.specificationKey].icon}
+                            alt={`${spec.label} icon`}
+                            className="spec-icon"
+                          />
+                        )}
+                    </div>
 
-                  <div className="spec-details">
-                    <span className="spec-label">{spec.label}</span>
-                    <span className="spec-value">{spec.value}</span>
-                  </div>
-                </TooltipTrigger>
-                <TooltipContent className="bg-slate-800 text-white !rounded-xl shadow-md">
-                  <p>
-                    {hoverData
-                      ? hoverData[spec.specificationKey]?.hover
-                      : 'No data available'}
-                  </p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </div>
-        ))}
+                    <div className="spec-details">
+                      <span className="spec-label">{spec.label}</span>
+                      <span className="spec-value">{spec.value}</span>
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent className="bg-slate-800 text-white rounded-xl shadow-md">
+                    <p>
+                      {hoverData
+                        ? hoverData[spec.specificationKey]?.hover
+                        : 'No data available'}
+                    </p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            </div>
+          )
+        })}
       </div>
     </div>
   )

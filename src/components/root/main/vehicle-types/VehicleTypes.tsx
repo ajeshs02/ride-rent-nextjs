@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { VEHICLE_TYPES } from '.'
+import { VEHICLE_TYPES } from './index'
 import { useAppContext } from '@/context/AppContext'
 import './VehicleTypes.scss'
 import ViewAllButton from '@/components/general/button/ViewAllButton'

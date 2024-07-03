@@ -66,7 +66,6 @@ const Images = () => {
                 className="main-img"
                 width={800}
                 height={780}
-                objectFit="cover"
               />
             </CarouselItem>
           ))}

@@ -1,0 +1,59 @@
+/* Default styles for mobile devices and above */
+.sign-up-section {
+  padding-top: 2rem;
+  background: white;
+
+  // heading
+  .heading-container {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    h1 {
+      font-size: 1.4rem;
+      margin-bottom: 0.3rem;
+    }
+
+    h2 {
+      font-weight: 400;
+      color: rgb(91, 91, 91);
+      font-size: 1.1rem;
+    }
+  }
+
+  // sign up section
+  .sign-up-container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+}
+
+
+
+/*  (min-width: 768px) and above */
+@media (min-width: 768px) {
+  .sign-up-section {
+
+    // sign up section
+    .sign-up-container {
+      width: 60%;
+    }
+  }
+}
+
+/* (min-width: 1024px) and above */
+@media (min-width: 1024px) {
+  .sign-up-section {
+
+    // sign up section
+    .sign-up-container {
+      width: 70%;
+      flex-direction: row;
+    }
+  }
+}

@@ -1,3 +1,4 @@
+import { FAQ_Data } from '@/components/common/FAQ'
 import FAQ from '@/components/common/FAQ/FAQ'
 import WhyOpt from '@/components/common/why-opt/WhyOpt'
 import Affordable from '@/components/root/main/affordable/Affordable'
@@ -58,7 +59,7 @@ export default function Home() {
       </Suspense>
 
       <Suspense fallback={<LazyLoad />}>
-        <FAQ />
+        <FAQ data={FAQ_Data} />
       </Suspense>
 
       <Suspense fallback={<LazyLoad />}>

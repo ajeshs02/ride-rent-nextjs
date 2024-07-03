@@ -1,5 +1,5 @@
 import './Features.scss'
-import { featureCards } from '.'
+import { featureCards } from './index'
 import FeaturesCard from '@/components/card/features-card/FeaturesCard'
 import FeatureLocation from './FeatureLocation'
 
