@@ -2,10 +2,11 @@ import './Locations.scss'
 import { LOCATION_TYPES } from '.'
 import ViewAllButton from '@/components/general/button/ViewAllButton'
 import Image from 'next/image'
+import MotionSection from '@/components/general/framer-motion/MotionSection'
 
 const Location = () => {
   return (
-    <section className="location_section wrapper">
+    <MotionSection className="location_section wrapper">
       <h2>
         Find Car Rental Offers In Other
         <span> Locations</span>
@@ -24,7 +25,7 @@ const Location = () => {
         ))}
       </div>
       <ViewAllButton value={'Location'} />
-    </section>
+    </MotionSection>
   )
 }
 export default Location

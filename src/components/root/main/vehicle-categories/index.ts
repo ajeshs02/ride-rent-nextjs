@@ -1,4 +1,13 @@
-export const VEHICLE_CATEGORIES = [
+import { VehicleCategoriesType } from '@/types/contextTypes'
+
+type VEHICLE_CATEGORIES_TYPE = {
+  id: number
+  icon: string
+  name: string
+  value: VehicleCategoriesType
+}[]
+
+export const VEHICLE_CATEGORIES: VEHICLE_CATEGORIES_TYPE = [
   {
     id: 1,
     icon: '/assets/img/vehicle categories/Cars.svg',

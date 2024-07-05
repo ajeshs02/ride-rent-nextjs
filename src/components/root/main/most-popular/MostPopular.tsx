@@ -5,10 +5,11 @@ import ViewAllButton from '@/components/general/button/ViewAllButton'
 import MainCard from '@/components/card/vehicle-card/main-card/MainCard'
 
 import CarouselWrapper from '@/components/common/carousel-wrapper/CarouselWrapper'
+import MotionSection from '@/components/general/framer-motion/MotionSection'
 
 const MostPopular = () => {
   return (
-    <section className="popular-section wrapper">
+    <MotionSection className="popular-section wrapper">
       <ClientHeading />
       <CarouselWrapper>
         {Array.from({ length: 6 }).map((_, index) => (
@@ -16,7 +17,7 @@ const MostPopular = () => {
         ))}
       </CarouselWrapper>
       <ViewAllButton value={'Cars'} />
-    </section>
+    </MotionSection>
   )
 }
 export default MostPopular

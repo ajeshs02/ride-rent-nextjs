@@ -3,6 +3,7 @@ import Accordion from './Accordion/Accordion'
 import './FAQ.scss'
 import { useState } from 'react'
 import Image from 'next/image'
+import MotionSection from '@/components/general/framer-motion/MotionSection'
 
 type FAQProps = {
   data: {
@@ -19,7 +20,7 @@ export default function FAQ({ data }: FAQProps) {
   }
 
   return (
-    <section className="faq-section wrapper">
+    <MotionSection className="faq-section wrapper">
       <div className="heading-container">
         <h1 className="frequently-asked">Frequently Asked Questions</h1>
         <Image
@@ -42,6 +43,6 @@ export default function FAQ({ data }: FAQProps) {
           />
         ))}
       </div>
-    </section>
+    </MotionSection>
   )
 }

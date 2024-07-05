@@ -8,8 +8,8 @@ import Accordion from '../accordion/filter-accordion/FilterAccordion'
 // Importing data set
 import {
   modelYears,
-  vehicleTypes,
-  carCategories,
+  vehicleCategories,
+  carSubTypes,
   seats,
   paymentModes,
   transmissions,
@@ -31,6 +31,13 @@ const Filter: FC = () => {
     getVehicleTypeLabel,
   } = useFilters()
 
+  const shouldRenderVehicleSubTypes = ![
+    'bus',
+    'van',
+    'yacht',
+    'buggy',
+  ].includes(selectedFilters.vehicleCategory)
+
   return (
     <div className="filter-container">
       <div>
@@ -45,32 +52,32 @@ const Filter: FC = () => {
           onChange={(value) => handleFilterChange('modelYear', value)}
         />
 
-        {/* Vehicle Type */}
+        {/* Vehicle Category */}
         <Accordion
-          title="Vehicle Type"
+          title="Vehicle Category"
           isSingleSelection={true}
-          options={vehicleTypes}
-          selected={selectedFilters.vehicleType}
-          onChange={(value) => handleFilterChange('vehicleType', value)}
+          options={vehicleCategories}
+          selected={selectedFilters.vehicleCategory}
+          onChange={(value) => handleFilterChange('vehicleCategory', value)}
         />
 
         {/* Vehicle Sub Types */}
-        {selectedFilters.vehicleType.length > 0 && (
+        {shouldRenderVehicleSubTypes && (
           <Accordion
-            title={`${getVehicleTypeLabel()} Category`}
+            title={`${getVehicleTypeLabel()} Types`}
             options={getVehicleSubTypes()}
-            selected={selectedFilters.vehicleSubType}
-            onChange={(value) => handleFilterChange('vehicleSubType', value)}
+            selected={selectedFilters.vehicleTypes}
+            onChange={(value) => handleFilterChange('vehicleTypes', value)}
           />
         )}
 
         {/* Car Categories */}
-        {selectedFilters.vehicleType[0] === 'cars' && (
+        {selectedFilters.vehicleCategory === 'car' && (
           <Accordion
-            title="Car Types"
-            options={carCategories}
-            selected={selectedFilters.carCategories || []}
-            onChange={(value) => handleFilterChange('carCategories', value)}
+            title="Car Sub Types"
+            options={carSubTypes}
+            selected={selectedFilters.carSubTypes || []}
+            onChange={(value) => handleFilterChange('carSubTypes', value)}
           />
         )}
 
@@ -119,7 +126,7 @@ const Filter: FC = () => {
         {/* Brand */}
         <BrandAccordion
           title="Brand"
-          options={getBrandsByVehicleType(selectedFilters.vehicleType[0])}
+          options={getBrandsByVehicleType(selectedFilters.vehicleCategory)}
           selected={selectedFilters.brand}
           onChange={(value) => handleFilterChange('brand', value)}
         />

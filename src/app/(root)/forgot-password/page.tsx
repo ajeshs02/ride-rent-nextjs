@@ -9,7 +9,7 @@ import { Forgot_Password_FAQ_Data, features } from '.'
 //Faq Heading component
 const title = (
   <h2>
-    What's new on <span>Ride.Rent?</span>
+    What&apos;s new on <span>Ride.Rent?</span>
   </h2>
 )
 

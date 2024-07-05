@@ -3,6 +3,9 @@ import styles from './Sidebar.module.scss'
 
 import { IoClose } from 'react-icons/io5'
 import Image from 'next/image'
+import { useAppContext } from '@/context/AppContext'
+import { FaLocationDot } from 'react-icons/fa6'
+import { SidebarAccordion } from '../sidebar-accordion/SidebarAccordion'
 
 type SidebarProps = {
   isOpen: boolean
@@ -10,6 +13,9 @@ type SidebarProps = {
 }
 
 const Sidebar = ({ isOpen, toggleSidebar }: SidebarProps) => {
+  const { selectedLocation, setSelectedLocation } = useAppContext()
+
+  // const handleQuickL
   return (
     <aside
       className={`${styles.sidebar} ${isOpen ? styles.open : styles.closed}`}
@@ -37,6 +43,9 @@ const Sidebar = ({ isOpen, toggleSidebar }: SidebarProps) => {
           <IoClose className={styles['hamburger-icon']} />
         </button>
       </div>
+
+      {/* sidebar items */}
+      <SidebarAccordion toggleSidebar={toggleSidebar} />
     </aside>
   )
 }

@@ -1,10 +1,11 @@
 import React from 'react'
 import './FooterGrid.scss'
-import { locations, company, vehicles, quick_links } from '.'
+import { locations, company, vehicles, quick_links } from './index'
+import MotionDiv from '../../framer-motion/MotionDiv'
 
 const FooterGrid = () => {
   return (
-    <div className="footer-grid wrapper ">
+    <MotionDiv className="footer-grid wrapper ">
       <div className="footer-section">
         {/* locations  link */}
         <h3 className="heading">Locations</h3>
@@ -52,7 +53,7 @@ const FooterGrid = () => {
           ))}
         </div>
       </div>
-    </div>
+    </MotionDiv>
   )
 }
 

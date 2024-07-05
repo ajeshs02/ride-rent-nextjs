@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/navigation-menu'
 import { useAppContext } from '@/context/AppContext'
 import { FaLocationDot } from 'react-icons/fa6'
-import { locations } from '../footer/footer-grid'
+import { locations } from '../footer/footer-grid/index'
 
 export default function LocationDropdown() {
   const { selectedLocation, setSelectedLocation } = useAppContext()
@@ -26,22 +26,25 @@ export default function LocationDropdown() {
   return (
     <NavigationMenu className="-mr-3">
       <NavigationMenuList>
-        <NavigationMenuItem className="!rounded-xl">
+        <NavigationMenuItem className="!rounded-xl  ">
           <NavigationMenuTrigger
-            className={`${styles['nav-item']} ${styles['nav-items-icon']} border-none outline-none`}
+            className={`${styles['nav-item']} ${styles['nav-items-icon']} border-none outline-none  !w-auto  truncate flex justify-end`}
           >
             <FaLocationDot className={`${styles['nav-items-icon']} `} />
             <span>{selectedLocation.name}</span>
           </NavigationMenuTrigger>
-          <NavigationMenuContent className="!w-52 flex flex-col p-1 bg-white shadow-md !rounded-xl gap-1">
+          <NavigationMenuContent className="!w-44 flex flex-col p-1 bg-white shadow-md !rounded-xl gap-1">
             {locations.map((loc) => (
               <NavigationMenuLink
                 key={loc.id}
                 className={`${
                   selectedLocation.value === loc.value && 'text-orange'
-                } cursor-pointer p-1 px-2 !rounded-xl hover:text-orange`}
+                } cursor-pointer p-1 px-2 flex gap-x-1 items-center !rounded-xl hover:text-orange`}
                 onClick={() => onLocationChange(loc)}
               >
+                <FaLocationDot
+                  className={`${styles['nav-items-icon']} scale-90`}
+                />
                 <span className="text-base">{loc.location}</span>
               </NavigationMenuLink>
             ))}

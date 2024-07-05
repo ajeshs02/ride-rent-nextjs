@@ -1,16 +1,17 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { VEHICLE_TYPES } from './index'
+import { VEHICLE_TYPES } from '.'
 import { useAppContext } from '@/context/AppContext'
 import './VehicleTypes.scss'
-import ViewAllButton from '@/components/general/button/ViewAllButton'
 import Image from 'next/image'
+import { MdExpandMore } from 'react-icons/md' // Import MdExpandMore icon
 
 const VehicleTypes = () => {
   const { selectedType } = useAppContext()
 
   const [isSmallScreen, setIsSmallScreen] = useState(false)
+  const [showAllTypes, setShowAllTypes] = useState(false)
 
   useEffect(() => {
     const handleResize = () => {
@@ -24,15 +25,28 @@ const VehicleTypes = () => {
     }
   }, [])
 
+  if (['bus', 'van', 'yacht'].includes(selectedType.value)) {
+    return null
+  }
+
+  const selectedVehicleCategory =
+    VEHICLE_TYPES[selectedType.value as keyof typeof VEHICLE_TYPES] || []
+
   const visibleVehicleTypes = isSmallScreen
-    ? VEHICLE_TYPES.slice(0, 6)
-    : VEHICLE_TYPES
+    ? showAllTypes
+      ? selectedVehicleCategory
+      : selectedVehicleCategory.slice(0, 6)
+    : selectedVehicleCategory
 
   const singularizeType = (type: string) => {
     if (type.toLowerCase() === 'buses') {
       return 'Bus'
     }
     return type.endsWith('s') ? type.slice(0, -1) : type
+  }
+
+  const handleToggleShowTypes = () => {
+    setShowAllTypes(!showAllTypes)
   }
 
   return (
@@ -49,8 +63,8 @@ const VehicleTypes = () => {
           <aside key={type.key} className="vehicle-types-card">
             <div className="top">
               <Image
-                width={80}
-                height={80}
+                width={100}
+                height={100}
                 src={type.src}
                 alt={`${type.name} Icon`}
               />
@@ -60,7 +74,15 @@ const VehicleTypes = () => {
           </aside>
         ))}
       </div>
-      <ViewAllButton value={'types'} />
+      {selectedVehicleCategory.length > 6 && isSmallScreen && (
+        <button
+          className={`show-more-button ${showAllTypes ? 'expanded' : ''}`}
+          onClick={handleToggleShowTypes}
+        >
+          {showAllTypes ? 'Show less' : 'Show more'}{' '}
+          <MdExpandMore className="icon" />
+        </button>
+      )}
     </section>
   )
 }

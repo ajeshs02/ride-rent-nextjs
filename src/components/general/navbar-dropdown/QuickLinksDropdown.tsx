@@ -37,13 +37,16 @@ export default function QuickLinksDropdown() {
             <FaLink className={`text-orange mr-1 text-lg `} />
             <span>Quick Links</span>
           </NavigationMenuTrigger>
-          <NavigationMenuContent className="!w-40 flex flex-col p-1  shadow-md  !bg-white gap-1">
+          <NavigationMenuContent className="!w-48 flex flex-col p-1  shadow-md  !bg-white gap-1">
             {linksData.map((item) => (
               <Link
                 key={item.id}
                 href={item.link}
-                className={`cursor-pointer p-1 px-2 !rounded-xl `}
+                className={`cursor-pointer p-1 px-2 !rounded-xl flex items-center gap-x-1 hover:text-orange ${
+                  currentPage === item.name && 'text-orange'
+                }`}
               >
+                <FaLink className={` mr-1 text-base `} />
                 <span
                   className={`!text-sm whitespace-nowrap hover:text-orange ${
                     currentPage === item.name && 'text-orange'

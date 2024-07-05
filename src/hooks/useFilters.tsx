@@ -1,51 +1,68 @@
-import { useState } from 'react'
+// useFilters.tsx
+import { FiltersType, VehicleCategoriesType } from '@/types/contextTypes'
 import { useAppContext } from '../context/AppContext'
-import { vehicleSubTypes, vehicleTypes } from '@/app/(root)/listing'
+import { vehicleSubTypes, vehicleCategories } from '@/app/(root)/listing'
+import { useEffect } from 'react'
 
 const useFilters = () => {
-  const { selectedFilters, setSelectedFilters } = useAppContext()
+  const { selectedFilters, selectedType, setSelectedFilters } = useAppContext()
 
-  const handleFilterChange = (filterName: any, value: any) => {
-    setSelectedFilters((prevFilters) => {
-      if (filterName === 'vehicleType') {
-        if (prevFilters[filterName][0] === value) {
+  useEffect(() => {
+    setSelectedFilters((prevFilters: FiltersType) => ({
+      ...prevFilters,
+      vehicleCategory: selectedType.value,
+    }))
+  }, [selectedType, setSelectedFilters])
+
+  const handleFilterChange = (filterName: keyof FiltersType, value: string) => {
+    setSelectedFilters((prevFilters: FiltersType): FiltersType => {
+      if (filterName === 'vehicleCategory') {
+        const newVehicleType = value as VehicleCategoriesType
+
+        if (prevFilters.vehicleCategory === newVehicleType) {
           return prevFilters
         } else {
-          return { ...prevFilters, [filterName]: [value], vehicleSubType: [] }
+          return {
+            ...prevFilters,
+            vehicleCategory: newVehicleType,
+            vehicleTypes: [],
+            carSubTypes: [],
+          }
         }
       } else {
         const newSelection = prevFilters[filterName].includes(value)
           ? prevFilters[filterName].filter((item) => item !== value)
           : [...prevFilters[filterName], value]
+
         return { ...prevFilters, [filterName]: newSelection }
       }
     })
   }
 
   const resetFilters = () => {
-    setSelectedFilters((prevFilters) => ({
+    setSelectedFilters({
       modelYear: [],
-      vehicleType: prevFilters.vehicleType,
-      vehicleSubType: [],
-      carCategories: [],
+      vehicleCategory: selectedType.value,
+      vehicleTypes: [],
+      carSubTypes: [],
       seats: [],
       paymentMode: [],
       transmission: [],
       fuelType: [],
       brand: [],
       color: [],
-    }))
+    })
   }
 
   const getVehicleSubTypes = () => {
-    const { vehicleType } = selectedFilters
-    return vehicleSubTypes[vehicleType[0]] || []
+    const { vehicleCategory } = selectedFilters
+    return vehicleSubTypes[vehicleCategory] || []
   }
 
   const getVehicleTypeLabel = () => {
-    const { vehicleType } = selectedFilters
-    const selectedType = vehicleTypes.find(
-      (type) => type.value === vehicleType[0]
+    const { vehicleCategory } = selectedFilters
+    const selectedType = vehicleCategories.find(
+      (type) => type.value === vehicleCategory
     )
     return selectedType ? selectedType.label : ''
   }

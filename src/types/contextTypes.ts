@@ -1,16 +1,32 @@
+export type VehicleCategoriesType =
+  | 'car'
+  | 'sports_car'
+  | 'cycle'
+  | 'motorcycle'
+  | 'sports_bike'
+  | 'leisure_boat'
+  | 'charter'
+  | 'bus'
+  | 'van'
+  | 'buggy'
+  | 'yacht'
+
 export type ValueType = {
   name: string
-  value: string
+  value: VehicleCategoriesType
 }
 export type VehicleType = ValueType
 
-export type LocationType = ValueType
+export type LocationType = {
+  name: string
+  value: string
+}
 
 export type FiltersType = {
   modelYear: string[]
-  vehicleType: string[]
-  vehicleSubType: string[]
-  carCategories: string[]
+  vehicleCategory: VehicleCategoriesType
+  vehicleTypes: string[]
+  carSubTypes: string[]
   seats: string[]
   paymentMode: string[]
   transmission: string[]

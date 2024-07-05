@@ -25,7 +25,7 @@ type IconData = {
 export type Category =
   | 'car'
   | 'sports_car'
-  | 'bicycle'
+  | 'cycle'
   | 'electric_cycle'
   | 'motorcycle'
   | 'sports_bike'
@@ -42,7 +42,7 @@ export const getBrandsByVehicleType = (vehicleType: Category): BrandType => {
     case 'car':
     case 'sports_car':
       return brandsByVehicleType.car
-    case 'bicycle':
+    case 'cycle':
     case 'electric_cycle':
       return brandsByVehicleType.cycle
     case 'motorcycle':
@@ -70,7 +70,7 @@ export const getHoverData = (category: Category): HoverData | null => {
     case 'car':
     case 'sports_car':
       return specificationsHoverData.cars
-    case 'bicycle':
+    case 'cycle':
     case 'electric_cycle':
       return specificationsHoverData.cycles
     case 'motorcycle':

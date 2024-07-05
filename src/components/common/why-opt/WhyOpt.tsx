@@ -1,10 +1,11 @@
 import './WhyOpt.scss'
 import Cities from '../cities/Cities'
 import WhyOptHeading from './WhyOptHeading'
+import MotionSection from '@/components/general/framer-motion/MotionSection'
 
 const WhyOpt = () => {
   return (
-    <section className="wrapper why-opt-section">
+    <MotionSection className="wrapper why-opt-section">
       <WhyOptHeading />
 
       <div className="description">
@@ -29,7 +30,7 @@ const WhyOpt = () => {
 
       {/* cities */}
       <Cities />
-    </section>
+    </MotionSection>
   )
 }
 export default WhyOpt

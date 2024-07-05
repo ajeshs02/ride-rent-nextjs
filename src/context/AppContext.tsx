@@ -38,9 +38,9 @@ const AppProvider = ({ children }: AppProviderProps) => {
   // global state for listing page filter
   const [selectedFilters, setSelectedFilters] = useState<FiltersType>({
     modelYear: [],
-    vehicleType: ['car'],
-    vehicleSubType: [],
-    carCategories: [],
+    vehicleCategory: selectedType.value,
+    vehicleTypes: [],
+    carSubTypes: [],
     seats: [],
     paymentMode: [],
     transmission: [],

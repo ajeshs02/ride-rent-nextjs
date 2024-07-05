@@ -1,10 +1,11 @@
+import MotionSection from '@/components/general/framer-motion/MotionSection'
 import DocumentsRequired from '../documents-required/DocumentsRequired'
 import './Documents.scss'
 import DocumentsHeading from './DocumentsHeading'
 
 const Documents = () => {
   return (
-    <section className="documents_section wrapper">
+    <MotionSection className="documents_section wrapper">
       <DocumentsHeading />
       <div className="description">
         <p>
@@ -32,7 +33,7 @@ const Documents = () => {
 
       {/* Documents Required */}
       <DocumentsRequired />
-    </section>
+    </MotionSection>
   )
 }
 export default Documents

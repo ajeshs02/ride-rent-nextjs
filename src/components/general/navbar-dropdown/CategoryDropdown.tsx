@@ -31,7 +31,7 @@ export default function CategoryDropdown() {
         <NavigationMenuItem className="!rounded-xl ">
           <NavigationMenuTrigger className={''}>
             <MdManageSearch className={`text-orange mr-1 text-lg `} />
-            <span>Cars</span>
+            <span>{selectedType.name}</span>
           </NavigationMenuTrigger>
           <NavigationMenuContent className="!w-32 flex flex-col p-1  shadow-md  !bg-white gap-1">
             {VEHICLE_CATEGORIES.map((category) => (

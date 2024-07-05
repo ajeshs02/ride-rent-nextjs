@@ -2,7 +2,6 @@
 
 import styles from './Navbar.module.scss'
 import { IoLanguage } from 'react-icons/io5'
-import { MdManageSearch } from 'react-icons/md'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import React, { useState } from 'react'
 import Sidebar from '../sidebar/Sidebar'
@@ -24,13 +23,6 @@ const Navbar = () => {
     <header className={`${styles.header} padding main-wrapper`}>
       <nav className={styles['nav-container']}>
         <div className={styles['nav-left']}>
-          <button
-            aria-label="Hamburger"
-            className={styles['hamburger-btn']}
-            onClick={toggleSidebar}
-          >
-            <GiHamburgerMenu className={`${styles['hamburger-icon']}`} />
-          </button>
           <div className={styles['logo-container']}>
             <Link href={'/'} className={styles['header-logo']}>
               <figure>
@@ -61,14 +53,14 @@ const Navbar = () => {
             </li>
 
             {/* location */}
-            <li>
+            <li className={styles.locations}>
               <LocationDropdown />
             </li>
 
-            <li>
+            <li className={styles.links}>
               <QuickLinksDropdown />
             </li>
-            <li>
+            <li className={styles.vehicles}>
               <CategoryDropdown />
             </li>
             <li className={styles['list-btn']}>
@@ -77,6 +69,15 @@ const Navbar = () => {
               </button>
             </li>
           </ul>
+
+          {/* hamburger */}
+          <button
+            aria-label="Hamburger"
+            className={styles['hamburger-btn']}
+            onClick={toggleSidebar}
+          >
+            <GiHamburgerMenu className={`${styles['hamburger-icon']}`} />
+          </button>
         </div>
 
         {/* sidebar */}

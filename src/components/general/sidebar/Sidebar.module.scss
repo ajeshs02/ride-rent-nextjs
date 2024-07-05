@@ -7,6 +7,7 @@
 
   position: fixed;
   top: 0;
+  right: 0;
   width: 270px;
   height: 100%;
   background-color: #ffffff;
@@ -15,11 +16,11 @@
   padding: 1.3rem 0.6rem;
 
   &.open {
-    left: 0;
+    right: 0;
   }
 
   &.closed {
-    left: -270px;
+    right: -270px;
   }
 
   .logo-container {

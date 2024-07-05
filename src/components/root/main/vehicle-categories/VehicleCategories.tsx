@@ -8,6 +8,7 @@ import Image from 'next/image'
 
 import Autoplay from 'embla-carousel-autoplay'
 import { Carousel, CarouselContent } from '@/components/ui/carousel'
+import MotionDiv from '@/components/general/framer-motion/MotionDiv'
 
 const VehicleCategories = () => {
   const { selectedType, setSelectedType } = useAppContext()
@@ -16,7 +17,7 @@ const VehicleCategories = () => {
   const plugin = useRef(Autoplay({ delay: 1600, stopOnInteraction: false }))
 
   return (
-    <div className="category-container">
+    <MotionDiv className="category-container">
       <Carousel
         plugins={[plugin.current]}
         className="w-full "
@@ -31,8 +32,7 @@ const VehicleCategories = () => {
                 selectedCard === category.id ? 'selected' : ''
               }`}
               onClick={() => {
-                setSelectedType(category)
-                // handleCardSelect(category.id)
+                setSelectedType({ name: category.name, value: category.value })
               }}
             >
               <div
@@ -55,7 +55,7 @@ const VehicleCategories = () => {
           ))}
         </CarouselContent>
       </Carousel>
-    </div>
+    </MotionDiv>
   )
 }
 

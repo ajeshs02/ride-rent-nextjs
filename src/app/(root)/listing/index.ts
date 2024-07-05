@@ -15,22 +15,22 @@ export const modelYears = Array.from(
   (_, i) => `${2024 - 5 * i}-${2020 - 5 * i}`
 )
 
-// vehicleTypes.ts
-export const vehicleTypes = [
-  { label: 'Cars', value: 'cars' },
-  { label: 'Sports Cars', value: 'sports_cars' },
-  { label: 'Cycles', value: 'cycles' },
-  { label: 'Motorcycles', value: 'motorcycles' },
-  { label: 'Sports Bikes', value: 'sports_bikes' },
-  { label: 'Leisure Boats', value: 'leisure_boats' },
-  { label: 'Charters', value: 'charters' },
+export const vehicleCategories = [
+  { label: 'Cars', value: 'car' },
+  { label: 'Sports Cars', value: 'sports_car' },
+  { label: 'Cycles', value: 'cycle' },
+  { label: 'Motorcycles', value: 'motorcycle' },
+  { label: 'Sports Bikes', value: 'sports_bike' },
+  { label: 'Leisure Boats', value: 'leisure_boat' },
+  { label: 'Yachts', value: 'yacht' },
+  { label: 'Charters', value: 'charter' },
   { label: 'Buggy', value: 'buggy' },
   { label: 'Van', value: 'van' },
   { label: 'Buses', value: 'bus' },
 ]
 
 // carCategories
-export const carCategories = [
+export const carSubTypes = [
   { label: 'Family MPV', value: 'family_mpv' },
   { label: 'Crossover', value: 'crossover' },
   { label: 'Sports Coupe', value: 'sports_coupe' },
@@ -122,9 +122,11 @@ export const colors = [
   { label: 'Golden', value: 'golden' },
 ]
 
+export type VehicleSubTypes = Record<string, { label: string; value: string }[]>
+
 // Vehicle Sub Types
-export const vehicleSubTypes = {
-  cars: [
+export const vehicleSubTypes: VehicleSubTypes = {
+  car: [
     { label: 'AIRPORT PICKUP', value: 'airport_pickup' },
     { label: 'BUGGY', value: 'buggy' },
     { label: 'BUSES', value: 'buses' },
@@ -141,11 +143,11 @@ export const vehicleSubTypes = {
     { label: 'VANS', value: 'vans' },
     { label: 'VINTAGE CARS', value: 'vintage_cars' },
   ],
-  sports_cars: [
+  sports_car: [
     { label: 'HYPER SPORTS CARS', value: 'hyper_sports_cars' },
     { label: 'RACE TRACK CARS', value: 'race_track_cars' },
   ],
-  cycles: [
+  cycle: [
     { label: 'TOURING BICYCLES', value: 'touring_bicycles' },
     { label: 'BMX BICYCLES', value: 'bmx_bicycles' },
     { label: 'CRUISER BICYCLES', value: 'cruiser_bicycles' },
@@ -157,7 +159,7 @@ export const vehicleSubTypes = {
     { label: 'KICK SCOOTER', value: 'kick_scooter' },
     { label: 'ROAD BICYCLES', value: 'road_bicycles' },
   ],
-  motorcycles: [
+  motorcycle: [
     { label: 'ADVENTURE', value: 'adventure' },
     { label: 'CRUISER', value: 'cruiser' },
     { label: 'DIRT BIKES', value: 'dirt_bikes' },
@@ -165,13 +167,13 @@ export const vehicleSubTypes = {
     { label: 'STANDARD', value: 'standard' },
     { label: 'TOURING', value: 'touring' },
   ],
-  sports_bikes: [
+  sports_bike: [
     { label: 'GENERAL', value: 'general' },
     { label: 'HYPER BIKES', value: 'hyper_bikes' },
     { label: 'SUPER BIKES', value: 'super_bikes' },
     { label: 'TRACK BIKES', value: 'track_bikes' },
   ],
-  leisure_boats: [
+  leisure_boat: [
     { label: 'Catamarans', value: 'catamarans' },
     { label: 'Center Console', value: 'center_console' },
     { label: 'Deck Boats', value: 'deck_boats' },
@@ -180,7 +182,7 @@ export const vehicleSubTypes = {
     { label: 'Pontoon Boats', value: 'pontoon_boats' },
     { label: 'Sail', value: 'sail' },
   ],
-  charters: [
+  charter: [
     { label: 'Charters', value: 'charters' },
     { label: 'Helicopters', value: 'helicopters' },
   ],

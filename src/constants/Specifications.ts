@@ -4,7 +4,7 @@ import { carIcons } from './Icons'
 // hover data for specifications
 export const specificationsHoverData = {
   // cycles and electric cycles
-  cycles: {
+  cycle: {
     brand: {
       hover: 'The company that made the bicycle.',
     },
@@ -38,7 +38,7 @@ export const specificationsHoverData = {
   // cycles end
 
   // motorcycles and sports bikes
-  bikes: {
+  bike: {
     brand: {
       hover: 'Manufacturer of the bike.',
     },
@@ -70,7 +70,7 @@ export const specificationsHoverData = {
   // bikes end
 
   // boats start
-  boats: {
+  boat: {
     brand: {
       hover: 'Manufacturer of the boat or yacht.',
     },
@@ -147,7 +147,7 @@ export const specificationsHoverData = {
   // boats end
 
   // cars start
-  cars: {
+  car: {
     brand: {
       hover: 'Manufacturer of the car.',
     },
@@ -505,7 +505,7 @@ export const specificationsIconData: SpecificationsIconData = {
       icon: carIcons.engineTypeIcon,
     },
   },
-  bicycle: {
+  cycle: {
     brand: {
       icon: carIcons.brandIcon,
     },

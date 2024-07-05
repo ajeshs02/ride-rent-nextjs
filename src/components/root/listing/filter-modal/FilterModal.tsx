@@ -3,8 +3,8 @@ import Accordion from '../accordion/filter-accordion/FilterAccordion'
 import './FilterModal.scss'
 import {
   modelYears,
-  vehicleTypes,
-  carCategories,
+  vehicleCategories,
+  carSubTypes,
   seats,
   paymentModes,
   transmissions,
@@ -12,6 +12,8 @@ import {
   colors,
 } from '../../../../app/(root)/listing/index'
 import { GrFormClose } from 'react-icons/gr'
+import BrandAccordion from '../accordion/brand-accordion/BrandAccordion'
+import { getBrandsByVehicleType } from '@/helpers/VehicleDetailsHelper'
 
 type FilterModalProps = {
   setIsModal: (isOpen: boolean) => void
@@ -46,32 +48,32 @@ const FilterModal: React.FC<FilterModalProps> = ({ setIsModal }) => {
             onChange={(value) => handleFilterChange('modelYear', value)}
           />
 
-          {/* Vehicle Type */}
+          {/* Vehicle Category */}
           <Accordion
-            title="Vehicle Type"
+            title="Vehicle Category"
             isSingleSelection={true}
-            options={vehicleTypes}
-            selected={selectedFilters.vehicleType}
-            onChange={(value) => handleFilterChange('vehicleType', value)}
+            options={vehicleCategories}
+            selected={selectedFilters.vehicleCategory}
+            onChange={(value) => handleFilterChange('vehicleCategory', value)}
           />
 
           {/* Vehicle Sub Types */}
-          {selectedFilters.vehicleType.length > 0 && (
+          {selectedFilters.vehicleTypes.length > 0 && (
             <Accordion
               title={`${getVehicleTypeLabel()} Type`}
               options={getVehicleSubTypes()}
-              selected={selectedFilters.vehicleSubType}
-              onChange={(value) => handleFilterChange('vehicleSubType', value)}
+              selected={selectedFilters.vehicleTypes}
+              onChange={(value) => handleFilterChange('vehicleTypes', value)}
             />
           )}
 
           {/* Car Categories */}
-          {selectedFilters.vehicleType[0] === 'cars' && (
+          {selectedFilters.vehicleCategory === 'car' && (
             <Accordion
               title="Car Categories"
-              options={carCategories}
-              selected={selectedFilters.carCategories || []}
-              onChange={(value) => handleFilterChange('carCategories', value)}
+              options={carSubTypes}
+              selected={selectedFilters.carSubTypes || []}
+              onChange={(value) => handleFilterChange('carSubTypes', value)}
             />
           )}
 
@@ -113,6 +115,14 @@ const FilterModal: React.FC<FilterModalProps> = ({ setIsModal }) => {
             options={colors}
             selected={selectedFilters.color}
             onChange={(value) => handleFilterChange('color', value)}
+          />
+
+          {/* Brand */}
+          <BrandAccordion
+            title="Brand"
+            options={getBrandsByVehicleType(selectedFilters.vehicleCategory)}
+            selected={selectedFilters.brand}
+            onChange={(value) => handleFilterChange('brand', value)}
           />
         </div>
         <div className="filter-buttons">

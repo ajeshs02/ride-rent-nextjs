@@ -2,10 +2,11 @@ import './Features.scss'
 import { featureCards } from './index'
 import FeaturesCard from '@/components/card/features-card/FeaturesCard'
 import FeatureLocation from './FeatureLocation'
+import MotionSection from '@/components/general/framer-motion/MotionSection'
 
 const Features = () => {
   return (
-    <div className="features_section wrapper">
+    <MotionSection className="features_section wrapper">
       <FeatureLocation />
       <div className="description">
         <p>
@@ -30,7 +31,7 @@ const Features = () => {
           <FeaturesCard key={feature.key} data={feature} />
         ))}
       </div>
-    </div>
+    </MotionSection>
   )
 }
 export default Features

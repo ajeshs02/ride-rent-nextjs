@@ -3,9 +3,10 @@ import FooterGrid from './footer-grid/FooterGrid'
 import './Footer.scss'
 import Social from './social/Social'
 import { FaRegCopyright } from 'react-icons/fa6'
+import MotionDiv from '../framer-motion/MotionDiv'
 const Footer = () => {
   return (
-    <footer className="">
+    <footer>
       <FooterGrid />
       <Social />
 
@@ -26,7 +27,7 @@ const Footer = () => {
           </figure>
         </div>
       </div>
-      <div className="bottom-container">
+      <MotionDiv className="bottom-container">
         <p>
           Get unbeatable deals on car rentals, chauffeur services, and car with
           driver, alongside bike, yacht, and private Charter/ helicopter
@@ -51,7 +52,7 @@ const Footer = () => {
             <span className="bold"> Ride.Rent LLC</span>
           </span>
         </p>
-      </div>
+      </MotionDiv>
     </footer>
   )
 }

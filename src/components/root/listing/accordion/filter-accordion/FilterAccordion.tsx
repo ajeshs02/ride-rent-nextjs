@@ -12,9 +12,9 @@ type Option = {
 type FilterAccordionProps = {
   title: string
   options: Option[]
-  selected: string[]
+  selected: string[] | string
   onChange: (value: string) => void
-  isSingleSelection?: boolean // Added based on usage in Filter component
+  isSingleSelection?: boolean
 }
 
 const FilterAccordion: React.FC<FilterAccordionProps> = ({
@@ -22,6 +22,7 @@ const FilterAccordion: React.FC<FilterAccordionProps> = ({
   options,
   selected,
   onChange,
+  isSingleSelection = false,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const contentRef = useRef<HTMLDivElement | null>(null)
@@ -57,7 +58,11 @@ const FilterAccordion: React.FC<FilterAccordionProps> = ({
             <input
               type="checkbox"
               value={option.value}
-              checked={selected.includes(option.value)}
+              checked={
+                isSingleSelection
+                  ? selected === option.value
+                  : selected.includes(option.value)
+              }
               onChange={handleCheckboxChange}
             />
             {option.label}

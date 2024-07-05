@@ -3,10 +3,11 @@ import { socials } from '.'
 import './Social.scss'
 import { FaPhoneVolume } from 'react-icons/fa6'
 import Image from 'next/image'
+import MotionDiv from '../../framer-motion/MotionDiv'
 
 const Social = () => {
   return (
-    <div className="social-container">
+    <MotionDiv className="social-container">
       <div className="left">
         {/* contact */}
         <div className="contact">
@@ -66,7 +67,7 @@ const Social = () => {
           })}
         </div>
       </div>
-    </div>
+    </MotionDiv>
   )
 }
 export default Social

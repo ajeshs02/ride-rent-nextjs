@@ -31,18 +31,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: 0.8rem;
+
   }
+
 
   .logo-container {
     width: fit-content;
     padding: 0;
-    margin-left: 1rem;
 
     .header-logo {
       padding: 0;
       font-weight: normal;
-      font-size: 0.85rem;
+      font-size: 0.6rem;
       color: gray;
       max-width: fit-content;
       text-align: right;
@@ -51,12 +51,12 @@
         margin: 0;
 
         figcaption {
-          font-size: 0.63rem;
+          font-size: 0.5rem;
         }
       }
 
       .logo-img {
-        width: 9rem;
+        width: 7.5rem;
       }
 
       span {
@@ -70,6 +70,8 @@
 
   .nav-items-container {
     width: fit-content;
+    display: flex;
+    align-items: center;
 
 
     ul {
@@ -87,8 +89,44 @@
         display: none;
       }
 
+      .vehicles {
+        display: none;
+      }
+
+      .locations {
+        margin-right: 2rem;
+      }
+
       .list-btn {
         display: none;
+      }
+    }
+
+    // .hamburger-btn
+    .hamburger-btn {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      margin: 0;
+      outline: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      .hamburger-icon {
+        width: 1.6rem;
+        height: 1.6rem;
+        transition: color 100ms ease-in;
+        margin-bottom: 4px;
+
+        &:hover {
+          color: $yellow;
+        }
+      }
+
+      &:hover .hamburger-icon {
+        color: $yellow;
       }
     }
 
@@ -116,32 +154,7 @@
     }
   }
 
-  .hamburger-btn {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    margin: 0;
-    outline: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
 
-    .hamburger-icon {
-      width: 1.6rem;
-      height: 1.6rem;
-      transition: color 100ms ease-in;
-      margin-bottom: 4px;
-
-      &:hover {
-        color: $yellow;
-      }
-    }
-
-    &:hover .hamburger-icon {
-      color: $yellow;
-    }
-  }
 
   .black-overlay {
     position: fixed;
@@ -208,11 +221,17 @@
         .list-btn {
           display: block;
         }
+
+        .vehicles {
+          display: block;
+        }
+      }
+
+      .hamburger-btn {
+        display: none;
       }
     }
 
-    .hamburger-btn {
-      display: none;
-    }
+
   }
 }

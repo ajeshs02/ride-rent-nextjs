@@ -10,11 +10,11 @@ import { FAQ_Data } from '@/components/common/FAQ'
 // title component
 const title = (
   <h2>
-    What's new on <span>Ride.Rent?</span>
+    What&apos;s new on <span>Ride.Rent?</span>
   </h2>
 )
 
-export default function page() {
+export default function ResetPassword() {
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
 

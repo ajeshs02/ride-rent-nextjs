@@ -4,10 +4,11 @@ import './TopBrands.scss'
 import BrandHeading from './BrandHeading'
 import CarouselWrapper from '@/components/common/carousel-wrapper/CarouselWrapper'
 import Image from 'next/image'
+import MotionSection from '@/components/general/framer-motion/MotionSection'
 
 const TopBrands = () => {
   return (
-    <section className="brands_section wrapper">
+    <MotionSection className="brands_section wrapper">
       <BrandHeading />
 
       <CarouselWrapper>
@@ -31,7 +32,7 @@ const TopBrands = () => {
       </CarouselWrapper>
 
       <ViewAllButton value={'Brands'} />
-    </section>
+    </MotionSection>
   )
 }
 export default TopBrands
