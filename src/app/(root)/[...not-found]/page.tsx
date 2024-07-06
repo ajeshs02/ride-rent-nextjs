@@ -15,7 +15,7 @@ export default function NotFound() {
           <h2>Coming Soon!</h2>
 
           <button className="yellow-gradient gradient-btn">
-            Check out the active offerings now
+            <Link href={'/'}>Check out the active offerings now</Link>
           </button>
 
           {/* logo */}

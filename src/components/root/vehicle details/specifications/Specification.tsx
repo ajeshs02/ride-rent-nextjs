@@ -121,8 +121,6 @@ const Specification: FC<SpecificationProps> = ({ category = 'car' }) => {
   const hoverData: HoverData | null = getHoverData(category) // Ensure category is of type Category
   const specificationIcons = getSpecificationIcon(category)
 
-  useEffect(() => console.log(specificationIcons), [specificationIcons])
-
   return (
     <div className="specification-container">
       <h2 className="custom-heading">Specifications</h2>

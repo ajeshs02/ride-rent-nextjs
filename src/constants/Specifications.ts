@@ -1,5 +1,4 @@
 import { Category } from '@/helpers/VehicleDetailsHelper'
-import { carIcons } from './Icons'
 
 // hover data for specifications
 export const specificationsHoverData = {
@@ -256,7 +255,6 @@ export const specificationsHoverData = {
       hover: 'Availability of staff to assist during the flight.',
     },
   },
-
   // charters end
 
   // vans start
@@ -440,164 +438,146 @@ export const specificationsIconData: SpecificationsIconData = {
   // cars icons
   car: {
     brand: {
-      icon: carIcons.brandIcon,
+      icon: '/assets/icons/specification icons/cars/1_Brand.svg',
     },
     yearOfManufacture: {
-      icon: carIcons.yearOfManufactureIcon,
+      icon: '/assets/icons/specification icons/cars/2_Year of Manufacture.svg',
     },
     engineType: {
-      icon: carIcons.engineTypeIcon,
+      icon: '/assets/icons/specification icons/cars/3_Engine Type.svg',
     },
     cruiseControl: {
-      icon: carIcons.cruiseControlIcon,
+      icon: '/assets/icons/specification icons/cars/4_Cruise Control.svg',
     },
     transmission: {
-      icon: carIcons.transmissionIcon,
+      icon: '/assets/icons/specification icons/cars/4_Transmission.svg',
     },
     wifi: {
-      icon: carIcons.wifiIcon,
+      icon: '/assets/icons/specification icons/cars/4_Wifi.svg',
     },
     seatingCapacity: {
-      icon: carIcons.seatingCapacityIcon,
+      icon: '/assets/icons/specification icons/cars/5_Seating Capacity.svg',
     },
     bodyType: {
-      icon: carIcons.bodyTypeIcon,
+      icon: '/assets/icons/specification icons/cars/6_Body Type.svg',
     },
     luggageCapacity: {
-      icon: carIcons.luggageCapacityIcon,
+      icon: '/assets/icons/specification icons/cars/6_Luggage Capacity.svg',
     },
     fuelTankCapacity: {
-      icon: carIcons.fuelTankCapacityIcon,
+      icon: '/assets/icons/specification icons/cars/8_Fuel Tank Capacity.svg',
     },
     batteryCapacity: {
-      icon: carIcons.batteryCapacityIcon,
+      icon: '/assets/icons/specification icons/cars/9_Battery Capacity.svg',
     },
     chargingTime: {
-      icon: carIcons.chargingTimeIcon,
+      icon: '/assets/icons/specification icons/cars/9_Charging Time.svg',
     },
     color: {
-      icon: carIcons.colorIcon,
+      icon: '/assets/icons/specification icons/cars/9_Colour.svg',
     },
     singleChargeRange: {
-      icon: carIcons.singleChargeRangeIcon,
+      icon: '/assets/icons/specification icons/cars/9_Single Charge Range.svg',
     },
     infotainmentSystem: {
-      icon: carIcons.infotainmentSystemIcon,
+      icon: '/assets/icons/specification icons/cars/10_Infotainment system.svg',
     },
     climateControl: {
-      icon: carIcons.climateControlIcon,
+      icon: '/assets/icons/specification icons/cars/11_Climate control.svg',
     },
     abs: {
-      icon: carIcons.absIcon,
+      icon: '/assets/icons/specification icons/cars/12_ABS.svg',
     },
     tractionControl: {
-      icon: carIcons.tractionControlIcon,
+      icon: '/assets/icons/specification icons/cars/13_Traction Control.svg',
     },
   },
   sports_car: {
     brand: {
-      icon: carIcons.brandIcon,
+      icon: '/assets/icons/specification icons/cars/1_Brand.svg',
     },
     yearOfManufacture: {
-      icon: carIcons.yearOfManufactureIcon,
-    },
-    engineType: {
-      icon: carIcons.engineTypeIcon,
+      icon: '/assets/icons/specification icons/cars/2_Year of Manufacture.svg',
     },
   },
   cycle: {
     brand: {
-      icon: carIcons.brandIcon,
+      icon: '/assets/icons/specification icons/cars/1_Brand.svg',
     },
     yearOfManufacture: {
-      icon: carIcons.yearOfManufactureIcon,
+      icon: '/assets/icons/specification icons/cars/2_Year of Manufacture.svg',
     },
   },
   electric_cycle: {
     brand: {
-      icon: carIcons.brandIcon,
+      icon: '/assets/icons/specification icons/cars/1_Brand.svg',
     },
     yearOfManufacture: {
-      icon: carIcons.yearOfManufactureIcon,
+      icon: '/assets/icons/specification icons/cars/2_Year of Manufacture.svg',
     },
   },
   motorcycle: {
     brand: {
-      icon: carIcons.brandIcon,
+      icon: '/assets/icons/specification icons/cars/1_Brand.svg',
     },
     yearOfManufacture: {
-      icon: carIcons.yearOfManufactureIcon,
+      icon: '/assets/icons/specification icons/cars/2_Year of Manufacture.svg',
     },
   },
   sports_bike: {
     brand: {
-      icon: carIcons.brandIcon,
+      icon: '/assets/icons/specification icons/cars/1_Brand.svg',
+    },
+    yearOfManufacture: {
+      icon: '/assets/icons/specification icons/cars/2_Year of Manufacture.svg',
     },
   },
   leisure_boat: {
     brand: {
-      icon: carIcons.brandIcon,
+      icon: '/assets/icons/specification icons/cars/1_Brand.svg',
     },
     yearOfManufacture: {
-      icon: carIcons.yearOfManufactureIcon,
-    },
-    engineType: {
-      icon: carIcons.engineTypeIcon,
+      icon: '/assets/icons/specification icons/cars/2_Year of Manufacture.svg',
     },
   },
   yacht: {
     brand: {
-      icon: carIcons.brandIcon,
+      icon: '/assets/icons/specification icons/cars/1_Brand.svg',
     },
     yearOfManufacture: {
-      icon: carIcons.yearOfManufactureIcon,
+      icon: '/assets/icons/specification icons/cars/2_Year of Manufacture.svg',
     },
   },
   charter: {
     brand: {
-      icon: carIcons.brandIcon,
+      icon: '/assets/icons/specification icons/cars/1_Brand.svg',
     },
     yearOfManufacture: {
-      icon: carIcons.yearOfManufactureIcon,
-    },
-    engineType: {
-      icon: carIcons.engineTypeIcon,
+      icon: '/assets/icons/specification icons/cars/2_Year of Manufacture.svg',
     },
   },
   van: {
     brand: {
-      icon: carIcons.brandIcon,
+      icon: '/assets/icons/specification icons/cars/1_Brand.svg',
     },
     yearOfManufacture: {
-      icon: carIcons.yearOfManufactureIcon,
-    },
-    engineType: {
-      icon: carIcons.engineTypeIcon,
+      icon: '/assets/icons/specification icons/cars/2_Year of Manufacture.svg',
     },
   },
   buggy: {
     brand: {
-      icon: carIcons.brandIcon,
+      icon: '/assets/icons/specification icons/cars/1_Brand.svg',
     },
-    cruiseControl: {
-      icon: carIcons.cruiseControlIcon,
-    },
-    transmission: {
-      icon: carIcons.transmissionIcon,
-    },
-    wifi: {
-      icon: carIcons.wifiIcon,
+    yearOfManufacture: {
+      icon: '/assets/icons/specification icons/cars/2_Year of Manufacture.svg',
     },
   },
   bus: {
     brand: {
-      icon: carIcons.brandIcon,
+      icon: '/assets/icons/specification icons/cars/1_Brand.svg',
     },
     yearOfManufacture: {
-      icon: carIcons.yearOfManufactureIcon,
-    },
-    engineType: {
-      icon: carIcons.engineTypeIcon,
+      icon: '/assets/icons/specification icons/cars/2_Year of Manufacture.svg',
     },
   },
 }

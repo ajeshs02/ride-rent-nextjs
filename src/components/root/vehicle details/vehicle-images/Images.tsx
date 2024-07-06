@@ -49,22 +49,25 @@ const Images = () => {
       <Carousel
         setApi={setApi}
         plugins={[plugin.current]}
-        className={`w-full
-      mx-auto md:px-9  main-container `}
+        className={`w-full max-w-full
+      mx-auto md:px-9 `}
         onMouseEnter={plugin.current.stop}
         onMouseLeave={() => plugin.current.play()}
         opts={{
           align: 'start',
         }}
       >
-        <CarouselContent className="gap-2 ">
+        <CarouselContent className="gap-2 max-w-full sub-container ">
           {imagedata.map((data) => (
-            <CarouselItem key={data.id} className=" img-container">
+            <CarouselItem
+              key={data.id}
+              className="w-full rounded-[1rem] p-0 max-w-full overflow-hidden"
+            >
               <Image
                 src={data.src}
                 alt={data.alt}
-                className="main-img"
-                width={800}
+                className="w-full h-full object-cover"
+                width={900}
                 height={780}
               />
             </CarouselItem>

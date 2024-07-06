@@ -1,6 +1,7 @@
 import './Features.scss'
 import { sampleVehicleFeatures } from '.'
-import { FaCheckDouble, FaFire } from 'react-icons/fa'
+import { FaFire } from 'react-icons/fa'
+import FeaturesSidebar from './features-sidebar/FeaturesSidebar'
 
 const VehicleFeatures = () => {
   return (
@@ -9,14 +10,18 @@ const VehicleFeatures = () => {
       <div className="features">
         {sampleVehicleFeatures.map((feature) => (
           <div key={feature.key} className="feature">
-            <div className="icon-box">
-              <FaFire className="icon" />
-            </div>
+            <span className="entity">&raquo;</span>
+
             <div className="feature-details">
               <span className="feature-label">{feature.label}</span>
             </div>
           </div>
         ))}
+      </div>
+
+      {/* features sidebar */}
+      <div className="overlay">
+        <FeaturesSidebar />
       </div>
     </div>
   )

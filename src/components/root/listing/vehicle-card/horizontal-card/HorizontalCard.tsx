@@ -8,6 +8,8 @@ import { BsFuelPumpFill } from 'react-icons/bs'
 import { FaRegCalendarDays, FaSquarePhoneFlip } from 'react-icons/fa6'
 import Specifications from '../../specifications/Specifications'
 import { FC } from 'react'
+import { MotionDivElm } from '@/components/general/framer-motion/MotionElm'
+import Phone from '@/components/common/phone/Phone'
 
 const HorizontalCard: FC = () => {
   // 8089808277
@@ -18,7 +20,11 @@ const HorizontalCard: FC = () => {
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
 
   return (
-    <div
+    <MotionDivElm
+      initial={{ opacity: 0, y: 15 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ type: 'tween', duration: 0.3, delay: 0.1 }}
+      viewport={{ once: true }}
       // to={`/details/${'12345'}`}
       className="horizontal-card-container slide-visible"
     >
@@ -105,12 +111,12 @@ const HorizontalCard: FC = () => {
               <ImMail className="icon mail" />
 
               {/* phone */}
-              <FaSquarePhoneFlip className="icon phone" />
+              <Phone />
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </MotionDivElm>
   )
 }
 

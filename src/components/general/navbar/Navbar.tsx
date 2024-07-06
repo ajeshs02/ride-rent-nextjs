@@ -3,7 +3,7 @@
 import styles from './Navbar.module.scss'
 import { IoLanguage } from 'react-icons/io5'
 import { GiHamburgerMenu } from 'react-icons/gi'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Sidebar from '../sidebar/Sidebar'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -18,6 +18,21 @@ const Navbar = () => {
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen)
   }
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSidebarOpen(false)
+    }
+
+    if (typeof window !== 'undefined')
+      window.addEventListener('resize', handleResize)
+
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', handleResize)
+      }
+    }
+  }, [])
 
   return (
     <header className={`${styles.header} padding main-wrapper`}>
@@ -82,7 +97,12 @@ const Navbar = () => {
 
         {/* sidebar */}
         {isSidebarOpen && (
-          <div className={styles['black-overlay']} onClick={toggleSidebar} />
+          <div
+            className={`${styles['black-overlay']} ${
+              isSidebarOpen ? styles['black-overlay-visible'] : ''
+            }`}
+            onClick={toggleSidebar}
+          />
         )}
         <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       </nav>

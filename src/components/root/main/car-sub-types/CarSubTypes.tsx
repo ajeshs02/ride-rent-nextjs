@@ -18,9 +18,9 @@ export default function CarSubTypes() {
       <CarouselWrapper isButtonVisible={false}>
         {carSubTypesData.map((data) => (
           <div key={data.id} className={'subtype-card'}>
-            {/* <div className="image-box">
+            <div className="image-box">
               <Image width={90} height={90} src={data.icon} alt={data.label} />
-            </div> */}
+            </div>
             <div className="subtype-info">
               <p className="label">{data.label}</p>
               <p className="count">{data.count} Cars</p>

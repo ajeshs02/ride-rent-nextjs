@@ -4,7 +4,6 @@ import styles from './Sidebar.module.scss'
 import { IoClose } from 'react-icons/io5'
 import Image from 'next/image'
 import { useAppContext } from '@/context/AppContext'
-import { FaLocationDot } from 'react-icons/fa6'
 import { SidebarAccordion } from '../sidebar-accordion/SidebarAccordion'
 
 type SidebarProps = {

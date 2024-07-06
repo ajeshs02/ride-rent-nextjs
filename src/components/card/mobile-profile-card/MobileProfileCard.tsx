@@ -7,6 +7,7 @@ import { FaSquarePhoneFlip } from 'react-icons/fa6'
 import { SiTicktick } from 'react-icons/si'
 import { useState } from 'react'
 import ProfileSpecification from '@/components/root/vehicle details/profile-specifications/ProfileSpecification'
+import Phone from '@/components/common/phone/Phone'
 
 const MobileProfileCard = () => {
   const [isExpanded, setIsExpanded] = useState(false)
@@ -75,7 +76,7 @@ const MobileProfileCard = () => {
               <ImMail className="icon mail" />
 
               {/* phone icon */}
-              <FaSquarePhoneFlip className="icon phone" />
+              <Phone />
             </div>
           </div>
         </div>

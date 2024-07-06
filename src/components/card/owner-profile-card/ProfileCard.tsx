@@ -2,8 +2,9 @@ import './ProfileCard.scss'
 import { MdVerifiedUser } from 'react-icons/md'
 import { FaWhatsappSquare } from 'react-icons/fa'
 import { ImMail } from 'react-icons/im'
-import { FaSquarePhoneFlip } from 'react-icons/fa6'
+
 import ProfileSpecification from '@/components/root/vehicle details/profile-specifications/ProfileSpecification'
+import Phone from '@/components/common/phone/Phone'
 
 const ProfileCard = () => {
   const phoneNumber = '919895765329'
@@ -57,10 +58,12 @@ const ProfileCard = () => {
             >
               <FaWhatsappSquare className="icon whatsapp" />
             </a>
-            <ImMail className="icon mail" />
+            <a href="mailto:ajeshs.dev@gmail.com" target="_blank">
+              <ImMail className="icon mail" />
+            </a>
 
             {/* phone icon */}
-            <FaSquarePhoneFlip className="icon" />
+            <Phone />
           </div>
         </div>
       </div>

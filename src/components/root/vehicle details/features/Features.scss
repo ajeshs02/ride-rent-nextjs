@@ -9,7 +9,8 @@
   box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
   width: 100%;
   max-width: 100% !important;
-
+  position: relative;
+  overflow: hidden;
 
   h2 {
     color: rgb(29, 29, 29);
@@ -24,11 +25,11 @@
     .feature {
       display: flex;
       column-gap: 0.3rem;
+      align-items: center;
 
-      .icon-box {
-        .icon {
-          color: #117383;
-        }
+      .entity {
+        color: $yellow;
+        font-size: large;
       }
 
       .feature-details {
@@ -38,7 +39,23 @@
       }
     }
   }
+
+  // overlay for features
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 6rem;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.9));
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+  }
 }
+
+
 
 /*  (min-width: 768px) and above */
 @media (min-width: 768px) {

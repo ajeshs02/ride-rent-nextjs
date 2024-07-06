@@ -69,16 +69,16 @@ export const getHoverData = (category: Category): HoverData | null => {
   switch (category) {
     case 'car':
     case 'sports_car':
-      return specificationsHoverData.cars
+      return specificationsHoverData.car
     case 'cycle':
     case 'electric_cycle':
-      return specificationsHoverData.cycles
+      return specificationsHoverData.cycle
     case 'motorcycle':
     case 'sports_bike':
-      return specificationsHoverData.bikes
+      return specificationsHoverData.bike
     case 'leisure_boat':
     case 'yacht':
-      return specificationsHoverData.boats
+      return specificationsHoverData.boat
     case 'charter':
       return specificationsHoverData.charter
     case 'van':

@@ -7,9 +7,21 @@ import { FaLinkedinIn } from 'react-icons/fa'
 
 export const socials = [
   { id: 1, icon: FaFacebookF, link: 'https://www.facebook.com/example' },
-  { id: 2, icon: FaXTwitter, link: 'https://www.facebook.com/example' },
-  { id: 3, icon: FaInstagram, link: 'https://www.facebook.com/example' },
-  { id: 4, icon: FaYoutube, link: 'https://www.facebook.com/example' },
-  { id: 5, icon: FaPinterestP, link: 'https://www.facebook.com/example' },
-  { id: 6, icon: FaLinkedinIn, link: 'https://www.facebook.com/example' },
+  { id: 2, icon: FaXTwitter, link: 'https://x.com/rentrideglobal' },
+  {
+    id: 3,
+    icon: FaInstagram,
+    link: 'https://www.instagram.com/ride.rentglobal',
+  },
+  { id: 4, icon: FaYoutube, link: ' https://www.youtube.com/@ride.rentglobal' },
+  {
+    id: 5,
+    icon: FaPinterestP,
+    link: ' https://www.pinterest.com/ridearentglobal',
+  },
+  {
+    id: 6,
+    icon: FaLinkedinIn,
+    link: 'https://www.linkedin.com/company/ride-rent',
+  },
 ]
