@@ -1,3 +1,4 @@
+import MotionDiv from '@/components/general/framer-motion/MotionDiv'
 import './PrivacyPolicy.scss'
 import HeadingBanner from '@/components/general/heading-banner/HeadingBanner'
 
@@ -5,7 +6,7 @@ export default function PrivacyPolicy() {
   return (
     <section className="privacy-section">
       <HeadingBanner heading="Privacy Policy" />
-      <div className="bottom">
+      <MotionDiv className="bottom">
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit
           dolorem atque ab perferendis dolores rerum maxime possimus? Repellat
@@ -36,7 +37,7 @@ export default function PrivacyPolicy() {
           elit. Tempora perspiciatis rerum corporis, ipsa nisi iure dolor modi
           consectetur nihil quisquam!
         </p>
-      </div>
+      </MotionDiv>
     </section>
   )
 }

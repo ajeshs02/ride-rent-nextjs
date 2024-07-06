@@ -24,7 +24,7 @@ export default function LocationDropdown() {
   }
 
   return (
-    <NavigationMenu className="-mr-3">
+    <NavigationMenu className="-mr-10 max-lg:-mr-5">
       <NavigationMenuList>
         <NavigationMenuItem className="!rounded-xl  ">
           <NavigationMenuTrigger

@@ -2,7 +2,7 @@ import { FAQ_Data } from '@/components/common/FAQ'
 import FAQ from '@/components/common/FAQ/FAQ'
 import WhyOpt from '@/components/common/why-opt/WhyOpt'
 import Affordable from '@/components/root/main/affordable/Affordable'
-import DocumentsRequired from '@/components/root/main/documents-required/DocumentsRequired'
+import CarSubTypes from '@/components/root/main/car-sub-types/CarSubTypes'
 import Documents from '@/components/root/main/documents/Documents'
 import Features from '@/components/root/main/features/Features'
 import Landing from '@/components/root/main/landing/Landing'
@@ -32,6 +32,10 @@ export default function Home() {
 
       <Suspense fallback={<LazyLoad />}>
         <Latest />
+      </Suspense>
+
+      <Suspense fallback={<LazyLoad />}>
+        <CarSubTypes />
       </Suspense>
 
       <Suspense fallback={<LazyLoad />}>

@@ -62,7 +62,7 @@ export function SidebarAccordion({ toggleSidebar }: SidebarAccordionType) {
             Quick Links
           </div>
         </AccordionTrigger>
-        <AccordionContent className="pl-2 flex flex-col gap-y-1 bg-slate-50 p-1 rounded-xl">
+        <AccordionContent className="pl-2 flex flex-col gap-y-1 bg-slate-100 p-1 rounded-xl">
           {linksData.map((link) => (
             <div
               onClick={() => {
@@ -87,12 +87,13 @@ export function SidebarAccordion({ toggleSidebar }: SidebarAccordionType) {
             Vehicle Category
           </div>
         </AccordionTrigger>
-        <AccordionContent className="pl-2 flex flex-col gap-y-1 bg-slate-50 p-1 rounded-xl">
+        <AccordionContent className="pl-2 flex flex-col gap-y-1 bg-slate-100 p-1 rounded-xl">
           {VEHICLE_CATEGORIES.map((category) => (
             <div
               onClick={() => {
                 setSelectedType({ name: category.name, value: category.value })
                 toggleSidebar()
+                router.push('/')
               }}
               key={category.id}
               className="accordion-item text-base cursor-pointer hover:text-yellow hover:underline flex items-center gap-2"
@@ -112,7 +113,7 @@ export function SidebarAccordion({ toggleSidebar }: SidebarAccordionType) {
             Language
           </div>
         </AccordionTrigger>
-        <AccordionContent className="pl-2 flex flex-col gap-y-1 bg-slate-50 p-1 rounded-xl">
+        <AccordionContent className="pl-2 flex flex-col gap-y-1 bg-slate-100 p-1 rounded-xl">
           {languagesData.map((lang) => (
             <div
               onClick={() => languageHandler(lang)}

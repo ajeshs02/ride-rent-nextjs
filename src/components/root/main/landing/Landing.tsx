@@ -2,6 +2,7 @@ import './Landing.scss'
 import { FaRegThumbsUp } from 'react-icons/fa'
 import VehicleCategories from '../vehicle-categories/VehicleCategories'
 import CustomDiv from './CustomDiv'
+import MotionDiv from '@/components/general/framer-motion/MotionDiv'
 
 const Landing = () => {
   return (
@@ -17,7 +18,7 @@ const Landing = () => {
         {/* landing top */}
         {/* wrapping with custom child component div for context usage */}
         <CustomDiv>
-          <div className={`landing-text-container`}>
+          <MotionDiv className={`landing-text-container`}>
             <p className="trust">
               <FaRegThumbsUp />
               Most Trusted Car Rental Services In Dubai!
@@ -29,7 +30,7 @@ const Landing = () => {
             <button id="view-all-cars" className="default-btn yellow-gradient">
               View all cars
             </button>
-          </div>
+          </MotionDiv>
         </CustomDiv>
         {/* Vehicle categories component */}
         <VehicleCategories />

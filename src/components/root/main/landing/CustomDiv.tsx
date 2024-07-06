@@ -7,17 +7,22 @@ export default function CustomDiv({ children }: { children: React.ReactNode }) {
   const { selectedType } = useAppContext()
 
   return (
-    <div className={`landing-bg `}>
-      <div className="imageWrapper">
+    <div
+      className={`landing-bg `}
+      style={{
+        backgroundImage: `url(/assets/img/bg/${selectedType.value}.webp)`,
+      }}
+    >
+      {/* <div className="imageWrapper">
         <Image
           src={`/assets/img/bg/${selectedType.value}.webp`}
-          className="image"
+          className="bg-image"
           alt="background image"
           quality={100}
           priority
           fill
         />
-      </div>
+      </div> */}
       {children}
     </div>
   )

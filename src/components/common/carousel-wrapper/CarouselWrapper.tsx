@@ -25,7 +25,7 @@ const CarouselWrapper = ({
   return (
     <Carousel
       plugins={[plugin.current]}
-      className={`w-full
+      className={`max-w-full w-fit
       mx-auto px-1   ${customClass ? customClass : 'md:max-w-[90%]'}`}
       onMouseEnter={plugin.current.stop}
       onMouseLeave={() => plugin.current.play()}

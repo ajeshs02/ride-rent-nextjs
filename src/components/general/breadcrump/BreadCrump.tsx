@@ -44,7 +44,7 @@ export default function BreadCrump() {
   }
 
   return (
-    <Breadcrumb className="z-10 ml-4">
+    <Breadcrumb className="z-10 mx-auto flex justify-center">
       <BreadcrumbList>
         <BreadcrumbItem>
           <Link href="/" className="text-white">

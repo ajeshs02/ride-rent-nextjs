@@ -1,11 +1,12 @@
 import HeadingBanner from '@/components/general/heading-banner/HeadingBanner'
 import './TermsCondition.scss'
+import MotionDiv from '@/components/general/framer-motion/MotionDiv'
 
 export default function TermsAndCondition() {
   return (
     <section className="terms-condition-section">
       <HeadingBanner heading="Terms & Conditions" />
-      <div className="bottom">
+      <MotionDiv className="bottom">
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem
           possimus doloremque quidem excepturi iusto accusamus nihil magnam!
@@ -40,7 +41,7 @@ export default function TermsAndCondition() {
           elit. Tempora perspiciatis rerum corporis, ipsa nisi iure dolor modi
           consectetur nihil quisquam!
         </p>
-      </div>
+      </MotionDiv>
     </section>
   )
 }
