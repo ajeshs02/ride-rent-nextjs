@@ -1,8 +1,7 @@
 @import '../../../../../styles/variables';
 
-h2 {
-  font-size: 1.7rem;
-  margin-bottom: 1rem;
+.feature-sidebar-heading {
+  margin-bottom: 1.5rem;
 }
 
 .feature-sub-section {
@@ -28,8 +27,8 @@ h2 {
     }
 
     .sub-heading {
-      font-weight: bold;
-      font-size: 1.2rem;
+      font-weight: 600;
+      font-size: 1.1rem;
     }
 
   }
@@ -48,6 +47,7 @@ h2 {
       align-items: start;
       column-gap: 0.4rem;
       transition: transform 0.1s ease-out;
+      font-size: 0.9rem;
 
 
       &:hover {

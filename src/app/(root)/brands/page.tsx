@@ -32,13 +32,14 @@ export default function Brands() {
             placeholder="Search brand..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="bg-grey-50 h-[44px] focus-visible:ring-offset-0 placeholder:text-grey-500 rounded-full p-regular-16 px-4 py-3 border-slate-300 focus-visible:ring-transparent max-w-96"
+            className="bg-grey-50 h-[44px] focus-visible:ring-offset-0 focus:border-yellow placeholder:text-grey-500 rounded-full p-regular-16 px-4 py-3 border-slate-300 focus-visible:ring-transparent max-w-96"
           />
           <Button
+            aria-label="Search Brands"
             type="submit"
-            className="bg-yellow rounded-2xl text-white hover:bg-yellow group active:scale-[0.97] transition-transform"
+            className="bg-yellow w-10 p-1 overflow-hidden rounded-2xl text-white hover:bg-yellow group active:scale-[0.97] transition-transform"
           >
-            <FaSearch className="text-xl group-hover:scale-[1.1] transition-transform" />
+            <FaSearch className="text-sm h-5 w-5 group-hover:scale-[1.1] transition-transform" />
           </Button>
         </form>
 
@@ -55,7 +56,7 @@ export default function Brands() {
               }}
             >
               <span
-                className={`!text-sm whitespace-nowrap p-1 rounded-[0.6rem] px-2 hover:bg-yellow hover:text-white  ${
+                className={`!text-sm whitespace-nowrap p-1 rounded-[0.6rem] px-2 hover:bg-yellow hover:text-white border shadow-md ${
                   selectedType.value === category.value &&
                   'text-white bg-yellow  '
                 }`}

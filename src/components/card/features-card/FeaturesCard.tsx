@@ -1,5 +1,6 @@
 import { IconType } from 'react-icons'
 import './FeaturesCard.scss'
+import MotionDiv from '@/components/general/framer-motion/MotionDiv'
 
 type FeatureCardProps = {
   data: {
@@ -15,13 +16,13 @@ const FeaturesCard = ({ data }: FeatureCardProps) => {
   const { icon: Icon, title, description, bgClass } = data
 
   return (
-    <div className="features_card">
+    <MotionDiv className="features_card">
       <div className={`feature_icon ${bgClass}`}>
         <Icon className="icon" />
       </div>
       <h3>{title}</h3>
       <p>{description}</p>
-    </div>
+    </MotionDiv>
   )
 }
 export default FeaturesCard

@@ -1,3 +1,4 @@
+import MotionDiv from '@/components/general/framer-motion/MotionDiv'
 import './Accordion.scss'
 import { useRef, useEffect, useState } from 'react'
 import { RiArrowDropDownLine } from 'react-icons/ri'
@@ -25,7 +26,7 @@ const Accordion: React.FC<AccordionProps> = ({
   }, [isOpen])
 
   return (
-    <div className="accordion_wrapper">
+    <MotionDiv className="accordion_wrapper">
       <button
         className={`question-container ${isOpen ? 'active' : ''}`}
         onClick={onClick}
@@ -37,7 +38,7 @@ const Accordion: React.FC<AccordionProps> = ({
       <div ref={contentHeight} className="answer-container" style={{ height }}>
         <p className="answer-content">{answer}</p>
       </div>
-    </div>
+    </MotionDiv>
   )
 }
 

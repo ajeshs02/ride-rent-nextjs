@@ -10,13 +10,15 @@
       align-items: center;
       gap: 0.5rem;
 
-      .search-input {}
+
     }
 
     .type {
       margin: 1rem auto 2rem;
       display: flex;
       justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
     }
   }
 

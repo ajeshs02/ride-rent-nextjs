@@ -19,10 +19,10 @@ export default function FeaturesSidebar() {
       </SheetTrigger>
       <SheetContent className="bg-white overflow-auto">
         <SheetHeader>
-          <SheetTitle>
-            <h2 className="custom-heading feature-heading">Features</h2>
+          <SheetTitle className="custom-heading feature-sidebar-heading text-2xl ">
+            Features
           </SheetTitle>
-          <SheetDescription>
+          <div>
             {featuresData.map((feature) => (
               <div key={feature.id} className="feature-sub-section">
                 <div className="sub-heading-container">
@@ -45,7 +45,7 @@ export default function FeaturesSidebar() {
                 </div>
               </div>
             ))}
-          </SheetDescription>
+          </div>
         </SheetHeader>
       </SheetContent>
     </Sheet>

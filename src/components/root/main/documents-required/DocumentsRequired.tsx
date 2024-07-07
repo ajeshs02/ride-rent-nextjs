@@ -1,6 +1,7 @@
 import { GiCheckMark } from 'react-icons/gi'
 import './DocumentsRequired.scss'
 import Image from 'next/image'
+import MotionDiv from '@/components/general/framer-motion/MotionDiv'
 
 const DocumentsRequired = () => {
   return (
@@ -11,7 +12,7 @@ const DocumentsRequired = () => {
       </div>
       <div className="box_container">
         {/* left doc */}
-        <div className="box">
+        <MotionDiv className="box">
           <div className="box_left">
             <Image
               width={100}
@@ -35,9 +36,9 @@ const DocumentsRequired = () => {
               </p>
             </div>
           </div>
-        </div>
+        </MotionDiv>
         {/* right doc */}
-        <div className="box two">
+        <MotionDiv className="box two">
           <div className="box_left">
             <Image
               width={100}
@@ -65,7 +66,7 @@ const DocumentsRequired = () => {
               </p>
             </div>
           </div>
-        </div>
+        </MotionDiv>
       </div>
 
       <div className="bottom_description">

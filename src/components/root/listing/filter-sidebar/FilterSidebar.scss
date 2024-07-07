@@ -1,0 +1,102 @@
+@import '../../../../styles/variables';
+
+/* Default styles for mobile devices and above */
+
+// modal styling
+.filter-modal {
+  background-color: #ffffff;
+  width: 100%;
+  height: 95%;
+  overflow-y: auto;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+
+
+  .accordion-wrapper {
+    width: 100%;
+    max-height: 85%;
+    overflow-y: scroll;
+    border-bottom: 1px solid rgba(228, 228, 228, 0.338);
+    border-radius: 1rem;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  // button styling
+  // button styling
+  .filter-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    position: absolute;
+    bottom: 0;
+
+    // apply button
+    .apply {
+      width: 100%;
+      height: 2.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 0.4rem;
+      border: none;
+      background-color: $yellow;
+      font-weight: bold;
+      font-size: 1rem;
+      color: white;
+      border-radius: 1rem;
+      transition: opacity 0.5s ease, transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+      cursor: pointer;
+      margin: 1rem auto 0.5rem;
+
+      &:hover {
+        transform: scale(1.005);
+        box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      &:active {
+        transform: scale(0.99);
+        box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    // reset button
+    .reset {
+      width: 100%;
+      height: 2.5rem;
+      border: 1px solid #dc3546a4;
+      background-color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      color: #dc3545;
+      border-radius: 1rem;
+      transition: opacity 0.5s ease, transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.01);
+        box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      &:active {
+        transform: scale(0.99);
+        box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+
+}
+
+
+/* Small screens and above (sm) */
+@media (min-width: 576px) {}
+
+/*  (min-width: 768px) and above */
+@media (min-width: 768px) {}
+
+/* (min-width: 1024px) and above */
+@media (min-width: 1024px) {}
