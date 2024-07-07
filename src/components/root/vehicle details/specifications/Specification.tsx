@@ -14,6 +14,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
+import MotionDiv from '@/components/general/framer-motion/MotionDiv'
 
 // Define the type for specification data
 interface SpecificationData {
@@ -122,7 +123,7 @@ const Specification: FC<SpecificationProps> = ({ category = 'car' }) => {
   const specificationIcons = getSpecificationIcon(category)
 
   return (
-    <div className="specification-container">
+    <MotionDiv className="specification-container">
       <h2 className="custom-heading">Specifications</h2>
       <div className="specifications">
         {sampleVehicleData.specifications.map((spec) => {
@@ -160,7 +161,7 @@ const Specification: FC<SpecificationProps> = ({ category = 'car' }) => {
           )
         })}
       </div>
-    </div>
+    </MotionDiv>
   )
 }
 

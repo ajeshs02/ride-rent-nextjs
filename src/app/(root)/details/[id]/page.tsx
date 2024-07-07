@@ -9,12 +9,13 @@ import { IoLocationOutline } from 'react-icons/io5'
 import DetailsSectionClient from '@/components/root/vehicle details/DetailsSectionClient'
 import Images from '@/components/root/vehicle details/vehicle-images/Images'
 import VehicleFeatures from '@/components/root/vehicle details/features/Features'
+import MotionDiv from '@/components/general/framer-motion/MotionDiv'
 
 export default function page() {
   return (
     <section className="vehicle-details-section wrapper">
       {/* Details heading */}
-      <div className="heading-container">
+      <MotionDiv className="heading-container">
         <h1 className="custom-heading">{`Chevrolet Camaro`}</h1>
         <p>
           Dubai Car Rental Convertible, 4 Seater, Premium Comfort, Heater and
@@ -27,7 +28,7 @@ export default function page() {
           </div>
           <span>Location : </span> Miami St, Destin, FL 32550, USA
         </div>
-      </div>
+      </MotionDiv>
 
       {/* Vehicle Details */}
       <DetailsSectionClient>

@@ -12,6 +12,7 @@ import {
 } from '@/components/ui/carousel'
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
+import MotionDiv from '@/components/general/framer-motion/MotionDiv'
 
 type CarouselWrapperProps = {
   children: React.ReactNode
@@ -45,7 +46,7 @@ const Images = () => {
   }, [api])
 
   return (
-    <div className="images-container ">
+    <MotionDiv className="images-container ">
       <Carousel
         setApi={setApi}
         plugins={[plugin.current]}
@@ -85,7 +86,7 @@ const Images = () => {
           ></div>
         ))}
       </div>
-    </div>
+    </MotionDiv>
   )
 }
 

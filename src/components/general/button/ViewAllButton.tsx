@@ -10,7 +10,7 @@ const ViewAllButton = ({
   link?: string
 }) => {
   return (
-    <Link href={'/listing'} className="common_view_all_btn">
+    <Link href={link} className="common_view_all_btn">
       View All {value} <GoArrowRight />
     </Link>
   )

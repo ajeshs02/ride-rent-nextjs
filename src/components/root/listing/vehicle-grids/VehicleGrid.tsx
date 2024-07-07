@@ -8,6 +8,7 @@ import useIsSmallScreen from '@/hooks/useIsSmallScreen'
 import FiltersButton from '../filter-toggle/FiltersButton'
 import useIntersectionObserver from '@/hooks/useIntersectionObserver'
 import FilterModal from '../filter-modal/FilterModal'
+import Pagination from '@/components/general/pagination/Pagination'
 
 type VehicleGridProps = {
   data: number[]
@@ -16,6 +17,7 @@ type VehicleGridProps = {
 
 const VehicleGrid: React.FC<VehicleGridProps> = ({ data, isGridView }) => {
   const [isModal, setIsModal] = useState(false)
+  const [page, setPage] = useState(1)
 
   const isSmallScreen = useIsSmallScreen(850)
   const isFiltersButtonVisible = useIsSmallScreen(1200)
@@ -41,6 +43,8 @@ const VehicleGrid: React.FC<VehicleGridProps> = ({ data, isGridView }) => {
           <HorizontalCard key={index} />
         )
       )}
+
+      <Pagination page={page} setPage={setPage} totalPages={8} />
 
       {/* Filter modal toggle button */}
       {isFiltersButtonVisible && isVehicleGridVisible && !isModal && (

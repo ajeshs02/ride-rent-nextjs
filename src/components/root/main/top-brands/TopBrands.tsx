@@ -8,7 +8,7 @@ import MotionSection from '@/components/general/framer-motion/MotionSection'
 
 const TopBrands = () => {
   return (
-    <MotionSection className="brands_section wrapper">
+    <MotionSection className="top-brands-section wrapper">
       <BrandHeading />
 
       <CarouselWrapper>
@@ -31,7 +31,7 @@ const TopBrands = () => {
         ))}
       </CarouselWrapper>
 
-      <ViewAllButton value={'Brands'} />
+      <ViewAllButton value={'Brands'} link="/brands" />
     </MotionSection>
   )
 }

@@ -10,6 +10,7 @@ import Specifications from '../../specifications/Specifications'
 import { FC } from 'react'
 import { MotionDivElm } from '@/components/general/framer-motion/MotionElm'
 import Phone from '@/components/common/phone/Phone'
+import Image from 'next/image'
 
 const HorizontalCard: FC = () => {
   // 8089808277
@@ -21,23 +22,29 @@ const HorizontalCard: FC = () => {
 
   return (
     <MotionDivElm
-      initial={{ opacity: 0, y: 15 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ scale: 0.95, opacity: 0, y: 15 }}
+      whileInView={{ scale: 1, opacity: 1, y: 0 }}
       transition={{ type: 'tween', duration: 0.3, delay: 0.1 }}
       viewport={{ once: true }}
       // to={`/details/${'12345'}`}
       className="horizontal-card-container slide-visible"
     >
-      {/* card top */}
+      {/* card left */}
       <div className="card-left">
         <figure className="image-box">
-          <img src={'/assets/img/sample1.jpg'} alt="" className="car-image" />
+          <Image
+            width={300}
+            height={300}
+            src={'/assets/img/sample1.jpg'}
+            alt="vehicle image"
+            className="vehicle-image"
+          />
 
           <span>{'Toyota'}</span>
         </figure>
       </div>
 
-      {/* card bottom */}
+      {/* card right */}
       <div className="card-right">
         {/* title */}
         <div className="right-top-container">
@@ -85,7 +92,12 @@ const HorizontalCard: FC = () => {
         <div className="bottom-box">
           <div className="bottom-left">
             <div className="profile">
-              <img src={'/assets/img/sampleprofile.jpg'} alt="profile" />
+              <Image
+                width={60}
+                height={60}
+                src={'/assets/img/sampleprofile.jpg'}
+                alt="profile"
+              />
             </div>
             <div className="details">
               <span>{'John Honnaai'}</span>

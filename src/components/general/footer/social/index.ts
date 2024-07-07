@@ -6,7 +6,11 @@ import { FaPinterestP } from 'react-icons/fa'
 import { FaLinkedinIn } from 'react-icons/fa'
 
 export const socials = [
-  { id: 1, icon: FaFacebookF, link: 'https://www.facebook.com/example' },
+  {
+    id: 1,
+    icon: FaFacebookF,
+    link: 'https://www.facebook.com/ride.rentonline',
+  },
   { id: 2, icon: FaXTwitter, link: 'https://x.com/rentrideglobal' },
   {
     id: 3,

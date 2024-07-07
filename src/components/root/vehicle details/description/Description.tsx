@@ -1,8 +1,9 @@
+import MotionDiv from '@/components/general/framer-motion/MotionDiv'
 import './Description.scss'
 
 const Description = () => {
   return (
-    <div className="description-section">
+    <MotionDiv className="description-section">
       <h2 className="custom-heading">Description</h2>
       <p>
         Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -35,7 +36,7 @@ const Description = () => {
         publishing software like Aldus PageMaker including versions of Lorem
         Ipsum.
       </p>
-    </div>
+    </MotionDiv>
   )
 }
 export default Description

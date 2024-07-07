@@ -11,7 +11,7 @@ const Footer = () => {
       <Social />
 
       {/* logo */}
-      <div className="footer-logo-container">
+      <MotionDiv className="footer-logo-container">
         <div className="header-logo">
           <figure>
             <Image
@@ -26,7 +26,7 @@ const Footer = () => {
             </figcaption>
           </figure>
         </div>
-      </div>
+      </MotionDiv>
       <MotionDiv className="bottom-container">
         <p>
           Get unbeatable deals on car rentals, chauffeur services, and car with

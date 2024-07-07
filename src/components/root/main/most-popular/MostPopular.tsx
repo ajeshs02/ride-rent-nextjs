@@ -16,7 +16,7 @@ const MostPopular = () => {
           <MainCard key={index} />
         ))}
       </CarouselWrapper>
-      <ViewAllButton value={'Cars'} />
+      <ViewAllButton value={'Cars'} link="/listing" />
     </MotionSection>
   )
 }

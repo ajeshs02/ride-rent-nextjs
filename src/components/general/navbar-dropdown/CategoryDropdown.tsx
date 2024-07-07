@@ -15,16 +15,6 @@ export default function CategoryDropdown() {
   const { selectedType, setSelectedType } = useAppContext()
   const router = useRouter()
 
-  const handleSelection = (category: {
-    id: number
-    icon: string
-    name: string
-    value: string
-  }) => {
-    setSelectedType(category)
-    router.push('/')
-  }
-
   return (
     <NavigationMenu className="-ml-5">
       <NavigationMenuList>
@@ -38,7 +28,13 @@ export default function CategoryDropdown() {
               <div
                 key={category.id}
                 className={`cursor-pointer p-1 px-2 !rounded-xl `}
-                onClick={() => handleSelection(category)}
+                onClick={() => {
+                  setSelectedType({
+                    name: category.name,
+                    value: category.value,
+                  })
+                  router.push('/')
+                }}
               >
                 <span
                   className={`!text-sm whitespace-nowrap hover:text-orange ${

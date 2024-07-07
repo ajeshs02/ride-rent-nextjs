@@ -5,12 +5,19 @@ import './ForgotPassword.scss'
 import WhyJoin from '@/components/common/why-join/WhyJoin'
 import FAQ from '@/components/common/FAQ/FAQ'
 import { Forgot_Password_FAQ_Data, features } from '.'
+import MotionDiv from '@/components/general/framer-motion/MotionDiv'
+import { MotionH2 } from '@/components/general/framer-motion/MotionElm'
 
 //Faq Heading component
 const title = (
-  <h2>
+  <MotionH2
+    initial={{ opacity: 0.1, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ type: 'tween', duration: 0.5 }}
+    viewport={{ once: true }}
+  >
     What&apos;s new on <span>Ride.Rent?</span>
-  </h2>
+  </MotionH2>
 )
 
 export default function ForgotPassword() {
@@ -22,7 +29,7 @@ export default function ForgotPassword() {
   return (
     <section className="wrapper reset-password-section">
       {/* form section */}
-      <div className="reset-password-container">
+      <MotionDiv className="reset-password-container">
         <h3>FORGOT PASSWORD ?</h3>
         <p>
           Enter your email and we will send you a link to reset your password
@@ -36,7 +43,7 @@ export default function ForgotPassword() {
           />
           <button type="submit">Save Changes</button>
         </form>
-      </div>
+      </MotionDiv>
 
       {/* Why Join Us */}
       <WhyJoin title={title} data={features} />

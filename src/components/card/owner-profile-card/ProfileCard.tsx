@@ -5,6 +5,7 @@ import { ImMail } from 'react-icons/im'
 
 import ProfileSpecification from '@/components/root/vehicle details/profile-specifications/ProfileSpecification'
 import Phone from '@/components/common/phone/Phone'
+import MotionDiv from '@/components/general/framer-motion/MotionDiv'
 
 const ProfileCard = () => {
   const phoneNumber = '919895765329'
@@ -14,7 +15,7 @@ const ProfileCard = () => {
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
 
   return (
-    <div className="profile-card">
+    <MotionDiv className="profile-card">
       <div className="heading">
         <h2 className="custom-heading">Listing Owner Details</h2>
       </div>
@@ -67,15 +68,7 @@ const ProfileCard = () => {
           </div>
         </div>
       </div>
-
-      {/* Availability */}
-      {/* <div className="availability">
-        <SiTicktick className="icon" />
-        <p>
-          Availability <span>Verified</span>
-        </p>
-      </div> */}
-    </div>
+    </MotionDiv>
   )
 }
 export default ProfileCard
